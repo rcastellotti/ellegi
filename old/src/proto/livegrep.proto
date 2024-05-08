@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "src/proto/config.proto";
+import "config.proto";
 
 message Query {
     string line = 1;
