@@ -91,4 +91,3 @@ void fs_indexer::walk(const fs::path &path)
         fs_indexer::read_file(path);
     }
 }
-`

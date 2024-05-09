@@ -13,7 +13,7 @@
 
 #include "src/chunk.h"
 #include "src/chunk_allocator.h"
-
+#include <absl/strings/string_view.h>
 using re2::StringPiece;
 using std::vector;
 
@@ -110,7 +110,7 @@ public:
     void extend(chunk *chunk, const StringPiece &piece);
     file_contents *build(chunk_allocator *alloc);
 protected:
-    vector <StringPiece> pieces_;
+    vector <re2::StringPiece> pieces_;
 };
 
 #endif

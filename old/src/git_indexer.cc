@@ -8,7 +8,7 @@
 #include "src/git_indexer.h"
 #include "src/smart_git.h"
 
-#include "src/proto/config.pb.h"
+#include "src/proto/gen/config.pb.h"
 
 using namespace std;
 

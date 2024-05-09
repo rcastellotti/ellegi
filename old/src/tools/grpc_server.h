@@ -1,7 +1,7 @@
 #ifndef CODESEARCH_GRPC_SERVER_H
 #define CODESEARCH_GRPC_SERVER_H
 
-#include "src/proto/livegrep.grpc.pb.h"
+#include "src/proto/gen/livegrep.grpc.pb.h"
 #include <future>
 #include <memory>
 

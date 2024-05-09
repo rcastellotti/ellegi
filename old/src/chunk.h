@@ -20,15 +20,10 @@
 #include <memory>
 
 #include <stdint.h>
-
+#include <re2/re2.h>
 struct indexed_file;
-namespace re2 {
-    class StringPiece;
-}
 
 using namespace std;
-using re2::StringPiece;
-
 /*
  * A chunk_file in a given chunk's `files' list means that some or all
  * of bytes `left' through `right' (inclusive on both sides) in
@@ -95,7 +90,7 @@ struct chunk {
         : size(0), files(), cf_root(),
           suffixes(suffixes), data(data) { }
 
-    void add_chunk_file(indexed_file *sf, const StringPiece& line);
+    void add_chunk_file(indexed_file *sf, const re2::StringPiece& line);
     void finish_file();
     void finalize();
     void finalize_files();

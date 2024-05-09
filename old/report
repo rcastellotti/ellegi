@@ -1,0 +1,1867 @@
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/fs_indexer.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/git_indexer.cc:7:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/chunk_allocator.cc:11:
+In file included from /workspaces/ellegi/old/src/chunk.h:23:
+In file included from /workspaces/ellegi/old/re2/re2/re2.h:224:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/chunk_allocator.cc:11:
+In file included from /workspaces/ellegi/old/src/chunk.h:23:
+/workspaces/ellegi/old/re2/re2/re2.h:733:30: error: expected ')'
+    void Copy(const Options& src) {
+                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/workspaces/ellegi/old/re2/re2/re2.h:733:14: note: to match this '('
+    void Copy(const Options& src) {
+             ^
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: expected expression
+      *this = src;
+              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/chunk_allocator.cc:11:
+In file included from /workspaces/ellegi/old/src/chunk.h:23:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/chunk_allocator.cc:11:
+In file included from /workspaces/ellegi/old/src/chunk.h:23:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+1 warning and 6 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/codesearch.cc:28:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/tools/grpc_server.cc:4:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/query_planner.cc:11:
+In file included from /workspaces/ellegi/old/src/query_planner.h:19:
+In file included from /workspaces/ellegi/old/re2/re2/re2.h:224:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/query_planner.cc:11:
+In file included from /workspaces/ellegi/old/src/query_planner.h:19:
+/workspaces/ellegi/old/re2/re2/re2.h:733:30: error: expected ')'
+    void Copy(const Options& src) {
+                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/workspaces/ellegi/old/re2/re2/re2.h:733:14: note: to match this '('
+    void Copy(const Options& src) {
+             ^
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: expected expression
+      *this = src;
+              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/query_planner.cc:11:
+In file included from /workspaces/ellegi/old/src/query_planner.h:19:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/query_planner.cc:11:
+In file included from /workspaces/ellegi/old/src/query_planner.h:19:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/query_planner.cc:11:
+In file included from /workspaces/ellegi/old/src/query_planner.h:20:
+In file included from /workspaces/ellegi/old/re2/re2/walker-inl.h:20:
+/workspaces/ellegi/old/re2/re2/regexp.h:371:48: error: expected ')'
+  static bool SimplifyRegexp(absl::string_view src, ParseFlags flags,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/workspaces/ellegi/old/re2/re2/regexp.h:371:29: note: to match this '('
+  static bool SimplifyRegexp(absl::string_view src, ParseFlags flags,
+                            ^
+1 warning and 7 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/content.cc:8:
+In file included from /workspaces/ellegi/old/src/content.h:12:
+In file included from /workspaces/ellegi/old/re2/re2/re2.h:224:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/content.cc:8:
+In file included from /workspaces/ellegi/old/src/content.h:12:
+/workspaces/ellegi/old/re2/re2/re2.h:733:30: error: expected ')'
+    void Copy(const Options& src) {
+                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/workspaces/ellegi/old/re2/re2/re2.h:733:14: note: to match this '('
+    void Copy(const Options& src) {
+             ^
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: expected expression
+      *this = src;
+              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/content.cc:8:
+In file included from /workspaces/ellegi/old/src/content.h:12:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/content.cc:8:
+In file included from /workspaces/ellegi/old/src/content.h:12:
+/workspaces/ellegi/old/re2/re2/re2.h:734:15: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+src/content.cc:14:28: error: no member named 'set' in 'absl::string_view'
+            pieces_.back().set(pieces_.back().data(),piece.size() + pieces_.back().size());
+            ~~~~~~~~~~~~~~ ^
+1 warning and 7 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+1 warning generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/tools/analyze-re.cc:18:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/proto/gen/config.pb.cc:4:
+In file included from src/proto/gen/config.pb.h:23:
+In file included from /usr/include/google/protobuf/io/coded_stream.h:151:
+/usr/include/google/protobuf/stubs/strutil.h:317:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+/usr/include/google/protobuf/stubs/strutil.h:317:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:319:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:319:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:322:70: error: expected ')'
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:322:50: note: to match this '('
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:322:29: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                ~~~~~~~~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:319:21: note: previous declaration is here
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:331:56: error: expected ')'
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:331:36: note: to match this '('
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:338:51: error: expected ')'
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:338:38: note: to match this '('
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                     ^
+/usr/include/google/protobuf/stubs/strutil.h:342:64: error: expected ')'
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:342:44: note: to match this '('
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:59: error: expected ')'
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:39: note: to match this '('
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                      ^
+/usr/include/google/protobuf/stubs/strutil.h:811:49: error: expected ')'
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:811:36: note: to match this '('
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:824:55: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:824:42: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:826:56: error: expected ')'
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:826:43: note: to match this '('
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                          ^
+/usr/include/google/protobuf/stubs/strutil.h:848:55: error: expected ')'
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:848:33: note: to match this '('
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                ^
+/usr/include/google/protobuf/stubs/strutil.h:850:62: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:850:40: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                       ^
+/usr/include/google/protobuf/stubs/strutil.h:854:47: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:854:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:856:54: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:856:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                        ^
+/usr/include/google/protobuf/stubs/strutil.h:858:65: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:858:52: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:861:56: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:861:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:861:22: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                ~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:848:21: note: previous declaration is here
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:863:63: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:863:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/proto/gen/livegrep.grpc.pb.cc:5:
+In file included from src/proto/gen/livegrep.pb.h:23:
+In file included from /usr/include/google/protobuf/io/coded_stream.h:151:
+/usr/include/google/protobuf/stubs/strutil.h:317:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+/usr/include/google/protobuf/stubs/strutil.h:317:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:319:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:319:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:322:70: error: expected ')'
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:322:50: note: to match this '('
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:322:29: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                ~~~~~~~~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:319:21: note: previous declaration is here
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:331:56: error: expected ')'
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:331:36: note: to match this '('
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:338:51: error: expected ')'
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:338:38: note: to match this '('
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                     ^
+/usr/include/google/protobuf/stubs/strutil.h:342:64: error: expected ')'
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:342:44: note: to match this '('
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:59: error: expected ')'
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:39: note: to match this '('
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                      ^
+/usr/include/google/protobuf/stubs/strutil.h:811:49: error: expected ')'
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:811:36: note: to match this '('
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:824:55: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:824:42: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:826:56: error: expected ')'
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:826:43: note: to match this '('
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                          ^
+/usr/include/google/protobuf/stubs/strutil.h:848:55: error: expected ')'
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:848:33: note: to match this '('
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                ^
+/usr/include/google/protobuf/stubs/strutil.h:850:62: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:850:40: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                       ^
+/usr/include/google/protobuf/stubs/strutil.h:854:47: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:854:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:856:54: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:856:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                        ^
+/usr/include/google/protobuf/stubs/strutil.h:858:65: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:858:52: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:861:56: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:861:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:861:22: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                ~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:848:21: note: previous declaration is here
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:863:63: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:863:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/proto/gen/livegrep.pb.cc:4:
+In file included from src/proto/gen/livegrep.pb.h:23:
+In file included from /usr/include/google/protobuf/io/coded_stream.h:151:
+/usr/include/google/protobuf/stubs/strutil.h:317:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+/usr/include/google/protobuf/stubs/strutil.h:317:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:319:62: error: expected ')'
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:319:42: note: to match this '('
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:322:70: error: expected ')'
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:322:50: note: to match this '('
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:322:29: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT std::string UnescapeCEscapeString(const std::string& src);
+                ~~~~~~~~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:319:21: note: previous declaration is here
+PROTOBUF_EXPORT int UnescapeCEscapeString(const std::string& src,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:331:56: error: expected ')'
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:331:36: note: to match this '('
+PROTOBUF_EXPORT std::string CEscape(const std::string& src);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:338:51: error: expected ')'
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:338:38: note: to match this '('
+PROTOBUF_EXPORT void CEscapeAndAppend(StringPiece src, std::string* dest);
+                                     ^
+/usr/include/google/protobuf/stubs/strutil.h:342:64: error: expected ')'
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:342:44: note: to match this '('
+PROTOBUF_EXPORT std::string Utf8SafeCEscape(const std::string& src);
+                                           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:59: error: expected ')'
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:345:39: note: to match this '('
+PROTOBUF_EXPORT std::string CHexEscape(const std::string& src);
+                                      ^
+/usr/include/google/protobuf/stubs/strutil.h:811:49: error: expected ')'
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:811:36: note: to match this '('
+PROTOBUF_EXPORT bool Base64Unescape(StringPiece src, std::string* dest);
+                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:824:55: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:824:42: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Unescape(const char* src, int slen, char* dest,
+                                         ^
+/usr/include/google/protobuf/stubs/strutil.h:826:56: error: expected ')'
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:826:43: note: to match this '('
+PROTOBUF_EXPORT bool WebSafeBase64Unescape(StringPiece src, std::string* dest);
+                                          ^
+/usr/include/google/protobuf/stubs/strutil.h:848:55: error: expected ')'
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                                      ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:848:33: note: to match this '('
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                                ^
+/usr/include/google/protobuf/stubs/strutil.h:850:62: error: expected ')'
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                                             ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:850:40: note: to match this '('
+PROTOBUF_EXPORT int WebSafeBase64Escape(const unsigned char* src, int slen,
+                                       ^
+/usr/include/google/protobuf/stubs/strutil.h:854:47: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:854:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(StringPiece src, std::string* dest);
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:856:54: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                                     ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:856:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(StringPiece src, std::string* dest);
+                                        ^
+/usr/include/google/protobuf/stubs/strutil.h:858:65: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:858:52: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64EscapeWithPadding(StringPiece src,
+                                                   ^
+/usr/include/google/protobuf/stubs/strutil.h:861:56: error: expected ')'
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:861:34: note: to match this '('
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                                 ^
+/usr/include/google/protobuf/stubs/strutil.h:861:22: error: functions that differ only in their return type cannot be overloaded
+PROTOBUF_EXPORT void Base64Escape(const unsigned char* src, int szsrc,
+                ~~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:848:21: note: previous declaration is here
+PROTOBUF_EXPORT int Base64Escape(const unsigned char* src, int slen, char* dest,
+                ~~~ ^
+/usr/include/google/protobuf/stubs/strutil.h:863:63: error: expected ')'
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                                              ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/google/protobuf/stubs/strutil.h:863:41: note: to match this '('
+PROTOBUF_EXPORT void WebSafeBase64Escape(const unsigned char* src, int szsrc,
+                                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+1 warning generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+1 warning generated.
+In file included from <built-in>:408:
+<command line>:1:12: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:22:
+In file included from /usr/include/absl/hash/hash.h:78:
+In file included from /usr/include/absl/hash/internal/hash.h:51:
+/usr/include/absl/types/optional.h:279:39: error: expected ')'
+  optional& operator=(const optional& src) = default;
+                                      ^
+<command line>:1:12: note: expanded from here
+/usr/include/absl/types/optional.h:279:22: note: to match this '('
+  optional& operator=(const optional& src) = default;
+                     ^
+/usr/include/absl/types/optional.h:282:34: error: expected ')'
+  optional& operator=(optional&& src) = default;
+                                 ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/types/optional.h:282:22: note: to match this '('
+  optional& operator=(optional&& src) = default;
+                     ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:534:48: error: expected ')'
+BidirectionalIterator c_copy_backward(const C& src,
+                                               ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:534:38: note: to match this '('
+BidirectionalIterator c_copy_backward(const C& src,
+                                     ^
+/usr/include/absl/algorithm/container.h:536:67: error: expected expression
+  return std::copy_backward(container_algorithm_internal::c_begin(src),
+                                                                  ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:536:67: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: expected expression
+                            container_algorithm_internal::c_end(src), dest);
+                                                                ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:65: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:537:71: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                            container_algorithm_internal::c_end(src), dest);
+                                                                      ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:545:27: error: expected ')'
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:545:22: note: to match this '('
+OutputIterator c_move(C&& src, OutputIterator dest) {
+                     ^
+/usr/include/absl/algorithm/container.h:546:58: error: expected expression
+  return std::move(container_algorithm_internal::c_begin(src),
+                                                         ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:546:58: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: expected expression
+                   container_algorithm_internal::c_end(src), dest);
+                                                       ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'tools'
+<command line>:1:13: note: expanded from here
+#define src/tools/codesearch.cc 1
+            ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:56: error: use of undeclared identifier 'codesearch'
+<command line>:1:19: note: expanded from here
+#define src/tools/codesearch.cc 1
+                  ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:547:62: error: use of undeclared identifier 'dest'; did you mean 'get'?
+                   container_algorithm_internal::c_end(src), dest);
+                                                             ^
+/usr/include/absl/types/variant.h:300:14: note: 'get' declared here
+constexpr T& get(variant<Types...>& v) {  // NOLINT
+             ^
+In file included from src/dump_load.cc:8:
+In file included from /workspaces/ellegi/old/src/codesearch.h:23:
+In file included from /usr/include/absl/container/flat_hash_set.h:35:
+/usr/include/absl/algorithm/container.h:555:43: error: expected ')'
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                          ^
+<command line>:1:12: note: expanded from here
+#define src/tools/codesearch.cc 1
+           ^
+/usr/include/absl/algorithm/container.h:555:38: note: to match this '('
+BidirectionalIterator c_move_backward(C&& src, BidirectionalIterator dest) {
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.

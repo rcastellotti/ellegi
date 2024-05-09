@@ -9,7 +9,7 @@
 #define CODESEARCH_GIT_INDEXER_H
 
 #include <string>
-#include "src/proto/config.pb.h"
+#include "src/proto/gen/config.pb.h"
 
 class code_searcher;
 class git_repository;
