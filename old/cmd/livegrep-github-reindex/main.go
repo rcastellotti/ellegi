@@ -15,8 +15,9 @@ import (
 	"strings"
 	"sync"
 
+	"ellegi/config"
+
 	"github.com/google/go-github/github"
-	"github.com/livegrep/livegrep/src/proto/config"
 
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"

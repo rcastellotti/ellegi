@@ -13,8 +13,8 @@
 
 #include "src/chunk.h"
 #include "src/chunk_allocator.h"
-#include <absl/strings/string_view.h>
-using re2::StringPiece;
+#include "absl/strings/string_view.h"
+
 using std::vector;
 
 
@@ -37,13 +37,13 @@ public:
     };
     class iterator {
     public:
-        const StringPiece operator*() {
-            return StringPiece(reinterpret_cast<char*>(alloc_->at(it_->chunk)->data + it_->off),
+        const absl::string_view operator*() {
+            return absl::string_view(reinterpret_cast<char*>(alloc_->at(it_->chunk)->data + it_->off),
                                it_->len);
         }
 
-        proxy<StringPiece> operator->() {
-            return proxy<StringPiece>(this->operator*());
+        proxy<absl::string_view> operator->() {
+            return proxy<absl::string_view>(this->operator*());
         }
 
         iterator &operator++() {
@@ -107,10 +107,10 @@ protected:
 
 class file_contents_builder {
 public:
-    void extend(chunk *chunk, const StringPiece &piece);
+    void extend(chunk *chunk, const absl::string_view &piece);
     file_contents *build(chunk_allocator *alloc);
 protected:
-    vector <re2::StringPiece> pieces_;
+    vector <absl::string_view> pieces_;
 };
 
 #endif

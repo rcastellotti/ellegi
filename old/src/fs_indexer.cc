@@ -15,79 +15,61 @@ using namespace std;
 namespace fs = boost::filesystem;
 
 fs_indexer::fs_indexer(code_searcher *cs,
-                       const string &repopath,
-                       const string &name,
+                       const string& repopath,
+                       const string& name,
                        const Metadata &metadata,
-                       const bool &ignore_symlinks)
-    : cs_(cs), repopath_(repopath), name_(name), ignore_symlinks_(ignore_symlinks)
-{
+                       const bool& ignore_symlinks)
+    : cs_(cs), repopath_(repopath), name_(name), ignore_symlinks_(ignore_symlinks) {
     tree_ = cs->open_tree(name, metadata, "");
 }
 
-fs_indexer::~fs_indexer()
-{
+fs_indexer::~fs_indexer() {
 }
 
-void fs_indexer::read_file(const fs::path &path)
-{
+void fs_indexer::read_file(const fs::path& path) {
     ifstream in(path.c_str(), ios::in);
     fs::path relpath = fs::relative(path, repopath_);
-    cs_->index_file(tree_, relpath.string(), StringPiece(static_cast<stringstream const &>(stringstream() << in.rdbuf()).str().c_str(), fs::file_size(path)));
+    cs_->index_file(tree_, relpath.string(), absl::string_view(static_cast<stringstream const&>(stringstream() << in.rdbuf()).str().c_str(), fs::file_size(path)));
 }
 
-void fs_indexer::walk_contents_file(const fs::path &contents_file_path)
-{
+void fs_indexer::walk_contents_file(const fs::path& contents_file_path) {
     ifstream contents_file(contents_file_path.c_str(), ios::in);
-    if (!contents_file.is_open())
-    {
+    if (!contents_file.is_open()) {
         throw std::ifstream::failure("Unable to open contents file for reading: " + contents_file_path.string());
     }
     string path;
-    while (std::getline(contents_file, path))
-    {
-        if (path.length())
-        {
+    while (std::getline(contents_file, path)) {
+        if (path.length()) {
             read_file(fs::path(repopath_) / path);
         }
     }
 }
 
-void fs_indexer::walk(const fs::path &path)
-{
+void fs_indexer::walk(const fs::path& path) {
     static int recursion_depth = 0;
     RecursionCounter guard(recursion_depth);
     if (recursion_depth > kMaxRecursion)
         return;
-    if (!fs::exists(path))
-        return;
+    if (!fs::exists(path)) return;
     fs::directory_iterator end_itr;
-    if (fs::is_directory(path))
-    {
+    if (fs::is_directory(path)) {
         for (fs::directory_iterator itr(path, fs::directory_options::skip_permission_denied);
-             itr != end_itr;
-             ++itr)
-        {
+                itr != end_itr;
+                ++itr) {
             boost::system::error_code ec;
-            if (ignore_symlinks_ && fs::is_symlink(itr->path()))
-            {
+            if (ignore_symlinks_ && fs::is_symlink(itr->path())) {
                 continue;
             }
-            if (fs::is_directory(itr->status(ec)))
-            {
+            if (fs::is_directory(itr->status(ec)) ) {
                 fs_indexer::walk(itr->path());
-            }
-            else if (fs::is_regular_file(itr->status(ec)))
-            {
+            } else if (fs::is_regular_file(itr->status(ec)) ) {
                 fs_indexer::read_file(itr->path());
             }
-            if (ec != boost::system::errc::success)
-            {
+            if (ec != boost::system::errc::success) {
                 fprintf(stderr, "WARN: %s is inaccessible.\n", itr->path().c_str());
             }
         }
-    }
-    else if (fs::is_regular_file(path))
-    {
+    } else if (fs::is_regular_file(path)) {
         fs_indexer::read_file(path);
     }
 }

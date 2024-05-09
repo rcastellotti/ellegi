@@ -4,9 +4,9 @@
 #include "src/codesearch.h"
 #include "src/tagsearch.h"
 #include "src/re_width.h"
-
 #include "src/tools/limits.h"
 #include "src/tools/grpc_server.h"
+#include "absl/strings/string_view.h"
 
 #include "google/protobuf/repeated_field.h"
 
@@ -191,9 +191,9 @@ Status parse_query(query *q, const ::Query* request, ::CodeSearchResult* respons
 }
 
 class add_match {
-    void insert_string_back(google::protobuf::RepeatedPtrField<string> *field, StringPiece str) const {
+    void insert_string_back(google::protobuf::RepeatedPtrField<string> *field, absl::string_view str) const {
         if (utf8::is_valid(str.begin(), str.end())) {
-            field->Add(std::string(str));
+            field->Add(str.data());
         } else {
             field->Add("<invalid utf-8>");
         }
@@ -230,7 +230,7 @@ public:
         }
         result->mutable_bounds()->set_left(m->matchleft);
         result->mutable_bounds()->set_right(m->matchright);
-        result->set_line(std::string(m->line));
+        result->set_line(m->line.data());
     }
 
     void operator()(const file_result *f) const {

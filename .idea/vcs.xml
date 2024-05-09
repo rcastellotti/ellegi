@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envconfig" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nocode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/src/re2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/triton" vcs="Git" />
+  </component>
+</project>

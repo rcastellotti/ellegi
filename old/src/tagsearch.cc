@@ -70,9 +70,9 @@ void tag_searcher::cache_indexed_files(code_searcher* cs) {
 bool tag_searcher::transform(query *q, match_result *m) const {
     static const std::string regex =
         create_tag_line_regex("([^\t]+)", "([^\t]+)", "(\\d+)", "(.+)");
-    StringPiece name, tags_path, tags;
+    absl::string_view name, tags_path, tags;
     if (!RE2::FullMatch(m->line, regex, &name, &tags_path, &m->lno, &tags)) {
-        log(q->trace_id, "unknown ctags format: %s\n", m->line.as_string().c_str());
+        log(q->trace_id, "unknown ctags format: %s\n", m->line);
         return false;
     }
 
@@ -87,7 +87,7 @@ bool tag_searcher::transform(query *q, match_result *m) const {
     // lookup the indexed_file base on repo and path
     path lookup = path(m->file->tree->name) /
         path(m->file->path).parent_path() /
-        path(tags_path.as_string());
+        path(tags_path.data());
     auto value = path_to_file_map_.find(lookup.string());
     if (value == path_to_file_map_.end()) {
         log(q->trace_id,
@@ -118,7 +118,7 @@ bool tag_searcher::transform(query *q, match_result *m) const {
     // line (match the first occurrence for simplicity)
     m->line = *line_it;
 
-    StringPiece match;
+    absl::string_view match;
     if (q->line_pat->Match(m->line, 0, m->line.size(),
                            RE2::UNANCHORED, &match, 1)) {
         m->matchleft = utf8::distance(m->line.data(), match.data());

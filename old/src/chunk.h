@@ -18,12 +18,13 @@
 #include <list>
 #include <set>
 #include <memory>
-
+#include "re2/re2.h"
 #include <stdint.h>
-#include <re2/re2.h>
+
 struct indexed_file;
 
 using namespace std;
+
 /*
  * A chunk_file in a given chunk's `files' list means that some or all
  * of bytes `left' through `right' (inclusive on both sides) in
@@ -90,7 +91,7 @@ struct chunk {
         : size(0), files(), cf_root(),
           suffixes(suffixes), data(data) { }
 
-    void add_chunk_file(indexed_file *sf, const re2::StringPiece& line);
+    void add_chunk_file(indexed_file *sf, const absl::string_view& line);
     void finish_file();
     void finalize();
     void finalize_files();

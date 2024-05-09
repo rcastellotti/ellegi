@@ -24,7 +24,7 @@
 #include "re2/re2.h"
 
 #include "src/lib/thread_queue.h"
-#include "src/proto/gen/config.pb.h"
+#include "src/proto/config.pb.h"
 
 class searcher;
 class filename_searcher;

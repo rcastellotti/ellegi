@@ -19,7 +19,7 @@
 
 #include "src/tools/limits.h"
 #include "src/tools/grpc_server.h"
-#include "src/proto/gen/config.pb.h"
+#include "src/proto/config.pb.h"
 
 #include <stdio.h>
 #include <sys/socket.h>

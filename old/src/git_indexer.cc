@@ -8,7 +8,7 @@
 #include "src/git_indexer.h"
 #include "src/smart_git.h"
 
-#include "src/proto/gen/config.pb.h"
+#include "src/proto/config.pb.h"
 
 using namespace std;
 
@@ -99,7 +99,7 @@ void git_indexer::walk_tree(const string& pfx,
             walk_tree(path + "/", "", obj);
         } else if (git_tree_entry_type(*it) == GIT_OBJ_BLOB) {
             const char *data = static_cast<const char*>(git_blob_rawcontent(obj));
-            cs_->index_file(idx_tree_, submodule_prefix_ + path, StringPiece(data, git_blob_rawsize(obj)));
+            cs_->index_file(idx_tree_, submodule_prefix_ + path, absl::string_view(data, git_blob_rawsize(obj)));
         } else if (git_tree_entry_type(*it) == GIT_OBJ_COMMIT) {
             // Submodule
             if (!walk_submodules_) {

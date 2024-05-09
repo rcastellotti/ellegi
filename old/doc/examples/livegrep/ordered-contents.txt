@@ -1,3 +1,0 @@
-./codesearch.cc
-./codesearch.h
-./BUILD

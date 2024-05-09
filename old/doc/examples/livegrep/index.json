@@ -1,23 +1,13 @@
 {
-    "name": "livegrep",
-    "fs_paths": [
-        {
-            "name": "livegrep/livegrep",
-            "path": "src/",
-            "metadata": {
-                "url_pattern": "https://github.com/{name}/blob/{version}/src/{path}#L{lno}"
-            }
-        }
-    ],
-    "repositories": [
-        {
-            "name": "livegrep",
-            "path": ".",
-            "revisions": [ "HEAD" ],
-            "metadata": {
-                "github": "livegrep/livegrep",
-                "url_pattern": "https://github.com/livegrep/livegrep/blob/{version}/src/{path}#L{lno}"
-            }
-        }
-    ]
+  "name": "livegrep",
+  "repositories": [
+    {
+      "name": "re2",
+      "path": "/workspaces/ellegi/triton/",
+      "revisions": ["HEAD"],
+      "metadata": {
+        "url_pattern": "WILL UPDATE THIS LATER REMOVED IT BECAUSE IT CONTAINS WORK STUFF"
+      }
+    }
+  ]
 }

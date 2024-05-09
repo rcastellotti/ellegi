@@ -40,7 +40,6 @@
 #include "utf8.h"
 
 using re2::RE2;
-using re2::StringPiece;
 using namespace std;
 
 const size_t kMinSkip = 250;
@@ -89,11 +88,11 @@ memrchr(const void *s,
 }
 #endif
 
-size_t hashstr::operator()(const StringPiece& str) const {
+size_t hashstr::operator()(const absl::string_view& str) const {
     return absl::Hash<absl::string_view>{}(absl::string_view(str.data(), str.size()));
 }
 
-const StringPiece empty_string(NULL, 0);
+const absl::string_view empty_string(NULL, 0);
 
 class search_limiter {
 public:
@@ -269,8 +268,8 @@ protected:
 p     * which contain `match', which is contained within `line'.
      */
     void find_match_brute(const chunk *chunk,
-                          const StringPiece& match,
-                          const StringPiece& line);
+                          const absl::string_view& match,
+                          const absl::string_view& line);
 
     /*
      * Given a match `match', contained within `line', find all files
@@ -279,16 +278,16 @@ p     * which contain `match', which is contained within `line'.
      * brute-force linear walk.
      */
     void find_match(const chunk *chunk,
-                    const StringPiece& match,
-                    const StringPiece& line);
+                    const absl::string_view& match,
+                    const absl::string_view& line);
 
     /*
      * Given a matching substring, its containing line, and a search
      * file, determine whether that file actually contains that line,
      * and if so, post results to queue_
      */
-    void try_match(const StringPiece&,
-                   const StringPiece&,
+    void try_match(const absl::string_view&,
+                   const absl::string_view&,
                    indexed_file *);
 
     static int line_start(const chunk *chunk, int pos) {
@@ -307,7 +306,7 @@ p     * which contain `match', which is contained within `line'.
         return end - chunk->data;
     }
 
-    static StringPiece find_line(const StringPiece& chunk, const StringPiece& match) {
+    static absl::string_view find_line(const absl::string_view& chunk, const absl::string_view& match) {
         const char *start, *end;
         assert(match.data() >= chunk.data());
         assert(match.data() <= chunk.data() + chunk.size());
@@ -323,7 +322,7 @@ p     * which contain `match', which is contained within `line'.
                     chunk.size() - (match.data() - chunk.data()) - match.size()));
         if (end == NULL)
             end = chunk.data() + chunk.size();
-        return StringPiece(start, end - start);
+        return absl::string_view(start, end - start);
     }
 
     const code_searcher *cc_;
@@ -447,8 +446,8 @@ void filename_searcher::match_filename(indexed_file *file) {
     if (!accept(query_, file))
         return;
 
-    StringPiece filepath = StringPiece(file->path);
-    StringPiece match;
+    absl::string_view filepath = absl::string_view(file->path);
+    absl::string_view match;
     if (!query_->line_pat->Match(filepath, 0, filepath.size(),
                                  RE2::UNANCHORED, &match, 1))
         return;
@@ -542,7 +541,7 @@ const indexed_tree* code_searcher::open_tree(const string &name,
 
 void code_searcher::index_file(const indexed_tree *tree,
                                const string& path,
-                               StringPiece contents) {
+                               absl::string_view contents) {
     assert(!finalized_);
     assert(alloc_);
     size_t len = contents.size();
@@ -551,7 +550,7 @@ void code_searcher::index_file(const indexed_tree *tree,
     const char *f;
     chunk *c;
     chunk *prev = NULL;
-    StringPiece line;
+    absl::string_view line;
 
     if (memchr(p, 0, len) != NULL)
         return;
@@ -581,7 +580,7 @@ void code_searcher::index_file(const indexed_tree *tree,
         }
         decltype(lines_)::iterator it = lines_.end();
         if (FLAGS_compress) {
-            it = lines_.find(StringPiece(p, f - p));
+            it = lines_.find(absl::string_view(p, f - p));
         }
         if (it == lines_.end()) {
             idx_bytes_dedup.inc((f - p) + 1);
@@ -590,7 +589,7 @@ void code_searcher::index_file(const indexed_tree *tree,
             unsigned char *alloc = alloc_->alloc(f - p + 1);
             memcpy(alloc, p, f - p);
             alloc[f - p] = '\n';
-            line = StringPiece((char*)alloc, f - p);
+            line = absl::string_view((char*)alloc, f - p);
             if (FLAGS_compress) {
                 if (alloc_->current_chunk() != prev)
                     lines_.clear();
@@ -795,7 +794,7 @@ void searcher::search_lines(uint32_t *indexes, int count,
 
     match_finger finger(chunk);
 
-    StringPiece search((char*)chunk->data, chunk->size);
+    absl::string_view search((char*)chunk->data, chunk->size);
     uint32_t max = indexes[0];
     uint32_t min = line_start(chunk, indexes[0]);
     for (int i = 0; i <= count && !limiter_.exit_early(); i++) {
@@ -874,8 +873,8 @@ void searcher::next_range(match_finger *finger,
 void searcher::full_search(match_finger *finger,
                            const chunk *chunk, size_t minpos, size_t maxpos)
 {
-    StringPiece str((char*)chunk->data, chunk->size);
-    StringPiece match;
+    absl::string_view str((char*)chunk->data, chunk->size);
+    absl::string_view match;
     int pos = minpos, new_pos, end = minpos;
     while (pos < maxpos && !limiter_.exit_early()) {
         if (pos >= end) {
@@ -900,7 +899,7 @@ void searcher::full_search(match_finger *finger,
             }
         }
         assert(memchr(match.data(), '\n', match.size()) == NULL);
-        StringPiece line = find_line(str, match);
+        absl::string_view line = find_line(str, match);
         if (utf8::is_valid(line.data(), line.data() + line.size()))
             find_match(chunk, match, line);
         new_pos = line.size() + line.data() - str.data() + 1;
@@ -910,8 +909,8 @@ void searcher::full_search(match_finger *finger,
 }
 
 void searcher::find_match_brute(const chunk *chunk,
-                                const StringPiece& match,
-                                const StringPiece& line) {
+                                const absl::string_view& match,
+                                const absl::string_view& line) {
     run_timer run(git_time_);
     timer tm;
     int off = (unsigned char*)line.data() - chunk->data;
@@ -940,8 +939,8 @@ void searcher::find_match_brute(const chunk *chunk,
 }
 
 void searcher::find_match(const chunk *chunk,
-                          const StringPiece& match,
-                          const StringPiece& line) {
+                          const absl::string_view& match,
+                          const absl::string_view& line) {
     if (!FLAGS_index) {
         find_match_brute(chunk, match, line);
         return;
@@ -988,8 +987,8 @@ void searcher::find_match(const chunk *chunk,
 }
 
 
-void searcher::try_match(const StringPiece& line,
-                         const StringPiece& match,
+void searcher::try_match(const absl::string_view& line,
+                         const absl::string_view& match,
                          indexed_file *sf) {
 
     int lno = 1;
@@ -1021,7 +1020,7 @@ void searcher::try_match(const StringPiece& line,
 
         // iterators for forward and backward context
         auto fit = it, bit = it;
-        StringPiece l = line;
+        absl::string_view l = line;
         int i = 0;
 
         for (i = 0; i < query_->context_lines; i++) {
@@ -1029,9 +1028,9 @@ void searcher::try_match(const StringPiece& line,
                 if (bit == sf->content->begin(cc_->alloc_.get()))
                     break;
                 --bit;
-                l = StringPiece(bit->data() + bit->size() + 1, 0);
+                l = absl::string_view(bit->data() + bit->size() + 1, 0);
             }
-            l = find_line(*bit, StringPiece(l.data() - 1, 0));
+            l = find_line(*bit, absl::string_view(l.data() - 1, 0));
             m->context_before.push_back(l);
         }
 
@@ -1041,9 +1040,9 @@ void searcher::try_match(const StringPiece& line,
             if (l.data() + l.size() == fit->data() + fit->size()) {
                 if (++fit == sf->content->end(cc_->alloc_.get()))
                     break;
-                l = StringPiece(fit->data() - 1, 0);
+                l = absl::string_view(fit->data() - 1, 0);
             }
-            l = find_line(*fit, StringPiece(l.data() + l.size() + 1, 0));
+            l = find_line(*fit, absl::string_view(l.data() + l.size() + 1, 0));
             m->context_after.push_back(l);
         }
 
