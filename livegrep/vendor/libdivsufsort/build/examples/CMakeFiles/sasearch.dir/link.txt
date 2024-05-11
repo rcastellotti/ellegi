@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -O3 -DNDEBUG -fomit-frame-pointer -rdynamic CMakeFiles/sasearch.dir/sasearch.o -o sasearch   -L/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../lib  -Wl,-rpath,/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../lib:/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib ../lib/libdivsufsort.so.3.0.0 

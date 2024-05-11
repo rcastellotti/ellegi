@@ -1,0 +1,38 @@
+# LDDFLAGS= -I $(CURDIR) -I $(CURDIR)/third_party/re2/ -I $(CURDIR)/third_party/utf8cpp/source/ 
+# CPPFLAGS= -g -Wno-everything -Wl,--copy-dt-needed-entries 
+
+
+# SRC = src/fs_indexer.cc src/dump_load.cc src/query_planner.cc src/content.cc src/codesearch.cc src/re_width.cc src/chunk.cc src/git_indexer.cc src/tagsearch.cc src/chunk_allocator.cc \
+#       src/lib/radix_sort.cc src/lib/metrics.cc src/lib/fs_linux.cc src/lib/debug.cc   \
+#       src/tools/grpc_server.cc src/tools/analyze-re.cc src/tools/inspect-index.cc src/tools/dump-file.cc \
+#       src/proto/config.pb.cc src/proto/livegrep.pb.cc src/proto/livegrep.grpc.pb.cc \
+    
+# proto:
+# 	mkdir -p $(CURDIR)/src/proto/
+# 	protoc --cpp_out=$(CURDIR)/src/proto/ --proto_path $(CURDIR)/src/proto config.proto 
+# 	protoc --cpp_out=$(CURDIR)/src/proto/ --proto_path $(CURDIR)/src/proto/ livegrep.proto
+# 	protoc --grpc_out=$(CURDIR)/src/proto/ --proto_path $(CURDIR)/src/proto/ --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin livegrep.proto 
+# 	# protoc --go_out=$(CURDIR)/web/proto/ --proto_path $(CURDIR)/src/proto/ --go_opt=Mconfig.proto=/ --go_opt=Mlivegrep.proto=/ config.proto livegrep.proto
+# 	# protoc --go_out=$(CURDIR)/src/proto/ --go-grpc_out=$(CURDIR)/web --proto_path $(CURDIR)/src/proto/  --plugin=protoc-gen-grpc=/root/go/bin/protoc-gen-go-grpc livegrep.proto 
+
+# codesearch: proto
+# 	mkdir -p $(CURDIR)/bin
+# 	clang -v 	$(LDDFLAGS) $(CPPFLAGS)  $(DEPENDS)   src/tools/codesearch.cc -o bin/codesearch $(SRC) $(LDLIBS) -Wl,--verbose third_party/re2/obj/libre2.a
+
+# test: proto
+# 	clang $(LDDFLAGS) $(CPPFLAGS)  test/planner_test.cc test/tagsearch_test.cc test/main.cc test/codesearch_test.cc -o bin/test $(SRC) $(LDLIBS) 
+
+
+
+# utf8ccp:
+#       curl -L -o /opt/utf8cpp.tar.gz https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
+#       tar -xf /opt/utf8cpp.tar.gz -C /workspaces/ellegi/livegrep/third_party_utf8cpp --strip-components 1
+
+# divsufsort:
+#       curl -L -o /opt/libdivsufsort.tar.gz https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz
+#       tar -xf /opt/libdivsufsort.tar.gz -C /workspaces/ellegi/livegrep/third_party/libdvisufsort --strip-components 1
+#       mkdir -p /opt/libdivsufsort-2.0.1/build && cd /opt/libdivsufsort-2.0.1/build && cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/usr/local" .. && make && make install
+
+
+
+
