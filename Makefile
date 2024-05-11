@@ -67,3 +67,4 @@ proto:
 clean:
 	rm -rf src/*.o src/lib/*.o src/tools/*.o src/proto/*.o
 	make clean -C vendor/re2
+	rm -rf src/vendor/build/
