@@ -40,5 +40,6 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/workspaces/ellegi/oldissimo"
 }

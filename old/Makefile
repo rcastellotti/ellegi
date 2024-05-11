@@ -31,3 +31,7 @@ proto:
 codesearch: proto
 	mkdir -p /workspaces/ellegi/bin
 	clang $(LDDFLAGS) $(CPPFLAGS) src/tools/codesearch.cc -o /workspaces/ellegi/bin/codesearch $(SRC) $(LDLIBS) 
+
+test: proto
+	mkdir -p /workspaces/ellegi/bin
+	clang $(LDDFLAGS) $(CPPFLAGS) src/test.cc -o /workspaces/ellegi/bin/test $(SRC) $(LDLIBS) 

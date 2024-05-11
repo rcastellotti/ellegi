@@ -17,6 +17,8 @@
 
 using std::vector;
 
+using namespace std;
+
 
 class file_contents {
 public:

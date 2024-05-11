@@ -1,0 +1,1428 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.6.22-linuxkit - aarch64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /workspaces/ellegi/build/CMakeFiles/3.27.8/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspaces/ellegi/build/CMakeFiles/3.27.8/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_af487/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_af487.dir/build.make CMakeFiles/cmTC_af487.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc'
+        Building C object CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm17/bin/clang-17" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         /usr/include/fortify
+         /usr/include
+         /usr/lib/llvm17/lib/clang/17/include
+        End of search list.
+        Linking C executable cmTC_af487
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af487.dir/link.txt --verbose=1
+        /usr/bin/clang  -v CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -o cmTC_af487 
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_af487 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -lssp_nonshared -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [/usr/include/fortify]
+          add: [/usr/include]
+          add: [/usr/lib/llvm17/lib/clang/17/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/fortify] ==> [/usr/include/fortify]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        collapse include dir [/usr/lib/llvm17/lib/clang/17/include] ==> [/usr/lib/llvm17/lib/clang/17/include]
+        implicit include dirs: [/usr/local/include;/usr/include/fortify;/usr/include;/usr/lib/llvm17/lib/clang/17/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_af487/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_af487.dir/build.make CMakeFiles/cmTC_af487.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc']
+        ignore line: [Building C object CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm17/bin/clang-17" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-Kobnpc -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/fortify]
+        ignore line: [ /usr/include]
+        ignore line: [ /usr/lib/llvm17/lib/clang/17/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_af487]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af487.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang  -v CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -o cmTC_af487 ]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_af487 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o -lssp_nonshared -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-musl-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_af487] ==> ignore
+          arg [/usr/lib/Scrt1.o] ==> obj [/usr/lib/Scrt1.o]
+          arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--as-needed] ==> ignore
+          arg [CMakeFiles/cmTC_af487.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lssp_nonshared] ==> lib [ssp_nonshared]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+          arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> [/usr/aarch64-alpine-linux-musl/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [ssp_nonshared;gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1;/usr/aarch64-alpine-linux-musl/lib;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b9db3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b9db3.dir/build.make CMakeFiles/cmTC_b9db3.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh'
+        Building CXX object CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm17/bin/clang++" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1 -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdeprecated-macro -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward
+         /usr/local/include
+         /usr/include/fortify
+         /usr/include
+         /usr/lib/llvm17/lib/clang/17/include
+        End of search list.
+        Linking CXX executable cmTC_b9db3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9db3.dir/link.txt --verbose=1
+        /usr/bin/clang++  -v CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b9db3 
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_b9db3 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lssp_nonshared -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1]
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl]
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward]
+          add: [/usr/local/include]
+          add: [/usr/include/fortify]
+          add: [/usr/include]
+          add: [/usr/lib/llvm17/lib/clang/17/include]
+        end of search list found
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1] ==> [/usr/include/c++/13.2.1]
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl] ==> [/usr/include/c++/13.2.1/aarch64-alpine-linux-musl]
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward] ==> [/usr/include/c++/13.2.1/backward]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/fortify] ==> [/usr/include/fortify]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        collapse include dir [/usr/lib/llvm17/lib/clang/17/include] ==> [/usr/lib/llvm17/lib/clang/17/include]
+        implicit include dirs: [/usr/include/c++/13.2.1;/usr/include/c++/13.2.1/aarch64-alpine-linux-musl;/usr/include/c++/13.2.1/backward;/usr/local/include;/usr/include/fortify;/usr/include;/usr/lib/llvm17/lib/clang/17/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b9db3/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b9db3.dir/build.make CMakeFiles/cmTC_b9db3.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh']
+        ignore line: [Building CXX object CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm17/bin/clang++" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1 -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdeprecated-macro -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-BiLOeh -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/fortify]
+        ignore line: [ /usr/include]
+        ignore line: [ /usr/lib/llvm17/lib/clang/17/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_b9db3]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9db3.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang++  -v CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b9db3 ]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_b9db3 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lssp_nonshared -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-musl-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b9db3] ==> ignore
+          arg [/usr/lib/Scrt1.o] ==> obj [/usr/lib/Scrt1.o]
+          arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--as-needed] ==> ignore
+          arg [CMakeFiles/cmTC_b9db3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lssp_nonshared] ==> lib [ssp_nonshared]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+          arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> [/usr/aarch64-alpine-linux-musl/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;ssp_nonshared;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1;/usr/aarch64-alpine-linux-musl/lib;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "abseil-cpp/CMake/AbseilDll.cmake:634 (check_cxx_source_compiles)"
+      - "abseil-cpp/CMakeLists.txt:96 (include)"
+    checks:
+      - "Performing Test ABSL_INTERNAL_AT_LEAST_CXX17"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/workspaces/ellegi/oldissimo/abseil-cpp/CMake;/workspaces/ellegi/oldissimo/abseil-cpp/absl/copts"
+    buildResult:
+      variable: "ABSL_INTERNAL_AT_LEAST_CXX17"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79a47/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_79a47.dir/build.make CMakeFiles/cmTC_79a47.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm'
+        Building CXX object CMakeFiles/cmTC_79a47.dir/src.cxx.o
+        /usr/bin/clang++ -DABSL_INTERNAL_AT_LEAST_CXX17  -std=gnu++14 -MD -MT CMakeFiles/cmTC_79a47.dir/src.cxx.o -MF CMakeFiles/cmTC_79a47.dir/src.cxx.o.d -o CMakeFiles/cmTC_79a47.dir/src.cxx.o -c /workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm/src.cxx
+        /workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm/src.cxx:6:4: error: "The compiler defaults or is configured for C++ < 17"
+            6 | #  error "The compiler defaults or is configured for C++ < 17"
+              |    ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_79a47.dir/build.make:79: CMakeFiles/cmTC_79a47.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-ooCaCm'
+        gmake: *** [Makefile:127: cmTC_79a47/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "abseil-cpp/CMake/AbseilDll.cmake:647 (check_cxx_source_compiles)"
+      - "abseil-cpp/CMakeLists.txt:96 (include)"
+    checks:
+      - "Performing Test ABSL_INTERNAL_AT_LEAST_CXX20"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/workspaces/ellegi/oldissimo/abseil-cpp/CMake;/workspaces/ellegi/oldissimo/abseil-cpp/absl/copts"
+    buildResult:
+      variable: "ABSL_INTERNAL_AT_LEAST_CXX20"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e1d0d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e1d0d.dir/build.make CMakeFiles/cmTC_e1d0d.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin'
+        Building CXX object CMakeFiles/cmTC_e1d0d.dir/src.cxx.o
+        /usr/bin/clang++ -DABSL_INTERNAL_AT_LEAST_CXX20  -std=gnu++14 -MD -MT CMakeFiles/cmTC_e1d0d.dir/src.cxx.o -MF CMakeFiles/cmTC_e1d0d.dir/src.cxx.o.d -o CMakeFiles/cmTC_e1d0d.dir/src.cxx.o -c /workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin/src.cxx
+        /workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin/src.cxx:6:4: error: "The compiler defaults or is configured for C++ < 20"
+            6 | #  error "The compiler defaults or is configured for C++ < 20"
+              |    ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_e1d0d.dir/build.make:79: CMakeFiles/cmTC_e1d0d.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-MjkCin'
+        gmake: *** [Makefile:127: cmTC_e1d0d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "abseil-cpp/CMakeLists.txt:122 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/workspaces/ellegi/oldissimo/abseil-cpp/CMake;/workspaces/ellegi/oldissimo/abseil-cpp/absl/copts"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_661e6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_661e6.dir/build.make CMakeFiles/cmTC_661e6.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp'
+        Building C object CMakeFiles/cmTC_661e6.dir/src.c.o
+        /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_661e6.dir/src.c.o -MF CMakeFiles/cmTC_661e6.dir/src.c.o.d -o CMakeFiles/cmTC_661e6.dir/src.c.o -c /workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp/src.c
+        Linking C executable cmTC_661e6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_661e6.dir/link.txt --verbose=1
+        /usr/bin/clang CMakeFiles/cmTC_661e6.dir/src.c.o -o cmTC_661e6 
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-cdMAkp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -Aa 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -Aa 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1117 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1117 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      No such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1117 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1117 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /workspaces/ellegi/build/CMakeFiles/3.27.8/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspaces/ellegi/build/CMakeFiles/3.27.8/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_25c43/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_25c43.dir/build.make CMakeFiles/cmTC_25c43.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe'
+        Building C object CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm17/bin/clang-17" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         /usr/include/fortify
+         /usr/include
+         /usr/lib/llvm17/lib/clang/17/include
+        End of search list.
+        Linking C executable cmTC_25c43
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25c43.dir/link.txt --verbose=1
+        /usr/bin/clang  -v CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -o cmTC_25c43 
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_25c43 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -lssp_nonshared -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [/usr/include/fortify]
+          add: [/usr/include]
+          add: [/usr/lib/llvm17/lib/clang/17/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/fortify] ==> [/usr/include/fortify]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        collapse include dir [/usr/lib/llvm17/lib/clang/17/include] ==> [/usr/lib/llvm17/lib/clang/17/include]
+        implicit include dirs: [/usr/local/include;/usr/include/fortify;/usr/include;/usr/lib/llvm17/lib/clang/17/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_25c43/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_25c43.dir/build.make CMakeFiles/cmTC_25c43.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe']
+        ignore line: [Building C object CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm17/bin/clang-17" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-FcLbHe -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/fortify]
+        ignore line: [ /usr/include]
+        ignore line: [ /usr/lib/llvm17/lib/clang/17/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_25c43]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25c43.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang  -v CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -o cmTC_25c43 ]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_25c43 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o -lssp_nonshared -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-musl-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_25c43] ==> ignore
+          arg [/usr/lib/Scrt1.o] ==> obj [/usr/lib/Scrt1.o]
+          arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--as-needed] ==> ignore
+          arg [CMakeFiles/cmTC_25c43.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lssp_nonshared] ==> lib [ssp_nonshared]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+          arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> [/usr/aarch64-alpine-linux-musl/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [ssp_nonshared;gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1;/usr/aarch64-alpine-linux-musl/lib;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi"
+      binary: "/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b67f2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b67f2.dir/build.make CMakeFiles/cmTC_b67f2.dir/build
+        gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi'
+        Building CXX object CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm17/bin/clang++" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1 -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdeprecated-macro -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl
+         /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward
+         /usr/local/include
+         /usr/include/fortify
+         /usr/include
+         /usr/lib/llvm17/lib/clang/17/include
+        End of search list.
+        Linking CXX executable cmTC_b67f2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b67f2.dir/link.txt --verbose=1
+        /usr/bin/clang++  -v CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b67f2 
+        Alpine clang version 17.0.5
+        Target: aarch64-alpine-linux-musl
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg
+        System configuration file directory: /etc/clang17
+        Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_b67f2 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lssp_nonshared -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o
+        gmake[1]: Leaving directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1]
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl]
+          add: [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward]
+          add: [/usr/local/include]
+          add: [/usr/include/fortify]
+          add: [/usr/include]
+          add: [/usr/lib/llvm17/lib/clang/17/include]
+        end of search list found
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1] ==> [/usr/include/c++/13.2.1]
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl] ==> [/usr/include/c++/13.2.1/aarch64-alpine-linux-musl]
+        collapse include dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward] ==> [/usr/include/c++/13.2.1/backward]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/fortify] ==> [/usr/include/fortify]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        collapse include dir [/usr/lib/llvm17/lib/clang/17/include] ==> [/usr/lib/llvm17/lib/clang/17/include]
+        implicit include dirs: [/usr/include/c++/13.2.1;/usr/include/c++/13.2.1/aarch64-alpine-linux-musl;/usr/include/c++/13.2.1/backward;/usr/local/include;/usr/include/fortify;/usr/include;/usr/lib/llvm17/lib/clang/17/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b67f2/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b67f2.dir/build.make CMakeFiles/cmTC_b67f2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi']
+        ignore line: [Building CXX object CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm17/bin/clang++" -cc1 -triple aarch64-alpine-linux-musl -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-abi aapcs -debugger-tuning=gdb -v -fcoverage-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi -resource-dir /usr/lib/llvm17/lib/clang/17 -dependency-file CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -canonical-system-headers -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1 -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include -internal-externc-isystem /usr/include/fortify -internal-externc-isystem /usr/include -internal-isystem /usr/lib/llvm17/lib/clang/17/include -fdeprecated-macro -fdebug-compilation-dir=/workspaces/ellegi/build/CMakeFiles/CMakeScratch/TryCompile-HKKihi -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target aarch64-alpine-linux-musl]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/aarch64-alpine-linux-musl]
+        ignore line: [ /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../include/c++/13.2.1/backward]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/fortify]
+        ignore line: [ /usr/include]
+        ignore line: [ /usr/lib/llvm17/lib/clang/17/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_b67f2]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b67f2.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang++  -v CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b67f2 ]
+        ignore line: [Alpine clang version 17.0.5]
+        ignore line: [Target: aarch64-alpine-linux-musl]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Configuration file: /etc/clang17/aarch64-alpine-linux-musl.cfg]
+        ignore line: [System configuration file directory: /etc/clang17]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -pie -EL -z now -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -dynamic-linker /lib/ld-musl-aarch64.so.1 -o cmTC_b67f2 /usr/lib/Scrt1.o /usr/lib/crti.o /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1 -L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib -L/lib -L/usr/lib --as-needed CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lssp_nonshared -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o /usr/lib/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-musl-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b67f2] ==> ignore
+          arg [/usr/lib/Scrt1.o] ==> obj [/usr/lib/Scrt1.o]
+          arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+          arg [-L/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--as-needed] ==> ignore
+          arg [CMakeFiles/cmTC_b67f2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lssp_nonshared] ==> lib [ssp_nonshared]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+          arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1] ==> [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1]
+        collapse library dir [/usr/bin/../lib/gcc/aarch64-alpine-linux-musl/13.2.1/../../../../aarch64-alpine-linux-musl/lib] ==> [/usr/aarch64-alpine-linux-musl/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;ssp_nonshared;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtbeginS.o;/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-alpine-linux-musl/13.2.1;/usr/aarch64-alpine-linux-musl/lib;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+...
