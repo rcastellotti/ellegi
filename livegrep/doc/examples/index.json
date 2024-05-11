@@ -1,0 +1,14 @@
+{
+    "name": "livegrep",
+    "repositories": [
+        {
+            "name": "livegrep",
+            "path": "/workspaces/ellegi/",
+            "revisions": [ "HEAD" ],
+            "metadata": {
+                "github": "livegrep/livegrep",
+                "url_pattern": "https://github.com/livegrep/livegrep/blob/{version}/src/{path}#L{lno}"
+            }
+        }
+    ]
+}
