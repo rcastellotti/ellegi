@@ -469,7 +469,7 @@ const char descriptor_table_protodef_livegrep_2eproto[] PROTOBUF_SECTION_VARIABL
     "\030\005 \001(\003\"\r\n\013InfoRequest\"\007\n\005Empty2n\n\nCodeSe"
     "arch\022!\n\004Info\022\014.InfoRequest\032\013.ServerInfo\022"
     "#\n\006Search\022\006.Query\032\021.CodeSearchResult\022\030\n\006"
-    "Reload\022\006.Empty\032\006.EmptyB\010Z\006proto/b\006proto3"
+    "Reload\022\006.Empty\032\006.Emptyb\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_livegrep_2eproto_deps[1] =
     {
@@ -479,7 +479,7 @@ static ::absl::once_flag descriptor_table_livegrep_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_livegrep_2eproto = {
     false,
     false,
-    1240,
+    1230,
     descriptor_table_protodef_livegrep_2eproto,
     "livegrep.proto",
     &descriptor_table_livegrep_2eproto_once,

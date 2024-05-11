@@ -4,13 +4,15 @@
 		"dockerfile": "Dockerfile"
 	},
 	"name": "ellegi",
-	"forwardPorts": [9172],
+	"forwardPorts": [
+		9172
+	],
 	"remoteUser": "root",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"golang.go",
-				"ms-vscode.cpptools"
+				"ms-vscode.cpptools-extension-pack",
 			]
 		}
 	}

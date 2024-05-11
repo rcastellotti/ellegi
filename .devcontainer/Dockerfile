@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:alpine-3.19
 RUN apk add clang \
     cmake \
-    fish \
+    fish tmux util-linux \
     abseil-cpp-dev \
     boost-dev \
     unzip \ 
@@ -18,10 +18,3 @@ RUN apk add clang \
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 ENV PATH="${PATH}:/root/go/bin"
-ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/workspaces/ellegi/livegrep/third_party/libdivsufsort/build/lib/
-WORKDIR "/workspaces/ellegi/old/"
-RUN <<EOF 
-EOF
-# RUN <<EOF 
-#     
-# EOF
