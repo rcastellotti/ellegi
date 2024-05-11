@@ -4,6 +4,9 @@
 		"dockerfile": "Dockerfile"
 	},
 	"name": "ellegi",
+	"runArgs": [
+		"--name", "ellegi"
+	],
 	"forwardPorts": [
 		9172
 	],
