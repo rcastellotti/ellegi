@@ -1,7 +1,9 @@
+CCDIR= $(CURDIR)/src
 CXX=clang
+# the first one is needed because files are (currently) importing with `src/lib/timer.h`
 CXXFLAGS= -I $(CURDIR) \
-		  -I $(CURDIR)/vendor/re2/ \
-		  -I $(CURDIR)/vendor/utf8cpp/source/ \
+		  -I $(CCDIR)/vendor/re2/ \
+		  -I $(CCDIR)/vendor/utf8cpp/source/ \
 		  -Wno-everything -Wl,--copy-dt-needed-entries
 		  
 LDLIBS = -lprotobuf -lstdc++ -lboost_filesystem -labsl_strings -labsl_hash -labsl_string_view -labsl_synchronization -labsl_raw_hash_set -lgrpc++ -lgflags -lgit2  -ldivsufsort -lgtest
@@ -22,13 +24,13 @@ help:
 %.o: %.cc 
 	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDDFLAGS) $(LDLIBS) 
 
-codesearch: $(OBJ) vendor/re2/obj/libre2.a
+codesearch: $(OBJ) src/vendor/re2/obj/libre2.a
 	$(CXX) $(CXXFLAGS) src/tools/codesearch.cc -o bin/$@ $^  $(LDLIBS) 
 
 ## test: build and run tests for codesearch
 test: $(OBJ) vendor/re2/obj/libre2.a bin/test
 	$(CXX) $(CXXFLAGS) test/codesearch_test.cc test/planner_test.cc test/tagsearch_test.cc test/main.cc -o bin/$@ $^  $(LDLIBS) 
-	$(CURDIR)/bin/test
+	$(CCDIR)/bin/test
 
 web-stuff:
 	cd web/frontend && /opt/pnpm install && ./node_modules/webpack/bin/webpack.js
@@ -41,13 +43,15 @@ dependencies: utf8cpp libdivsufsort
 
 utf8ccp:
 	curl -L -o /opt/utf8cpp.tar.gz https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
-	tar -xf /opt/utf8cpp.tar.gz -C $(CURDIR)/vendor/utf8cpp --strip-components 1
+	tar -xf /opt/utf8cpp.tar.gz -C $(CCDIR)/vendor/utf8cpp --strip-components 1
 
-libdivsufsort:
+download-libdivsufsort:
 	curl -L -o /opt/libdivsufsort.tar.gz https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz
-	mkdir -p $(CURDIR)/vendor/libdivsufsort
-	tar -xf /opt/libdivsufsort.tar.gz -C $(CURDIR)/vendor/libdivsufsort --strip-components 1
-	mkdir -p $(CURDIR)/vendor/libdivsufsort/build && cd $(CURDIR)/vendor/libdivsufsort/build && cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/usr/local" .. && make && make install
+	mkdir -p $(CCDIR)/vendor/libdivsufsort
+	tar -xf /opt/libdivsufsort.tar.gz -C $(CCDIR)/vendor/libdivsufsort --strip-components 1
+
+install-libdivsufsort:
+	mkdir -p $(CCDIR)/vendor/libdivsufsort/build && cd $(CCDIR)/vendor/libdivsufsort/build && cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/usr/local" .. && make && make install
 
 ## proto: generate go and cpp files in `web/proto` and `src/proto`
 proto:
