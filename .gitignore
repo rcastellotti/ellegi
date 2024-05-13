@@ -3,3 +3,5 @@ bin/
 .DS_Store/
 node_modules
 .pnpm-store/
+src/vendor/libdivsufsort/build/
+*.idx

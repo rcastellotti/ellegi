@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -O3 -DNDEBUG -fomit-frame-pointer -rdynamic CMakeFiles/unbwt.dir/unbwt.o -o unbwt   -L/workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../lib  -Wl,-rpath,/workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../lib ../lib/libdivsufsort.a 
