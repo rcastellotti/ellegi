@@ -2,6 +2,8 @@
 + `./bin/codesearch -grpc localhost:9999 /workspaces/ellegi/old/doc/examples/livegrep/index.json` 
 
 
+generate an index file: ./bin/codesearch -index_only -dump_index livegrep.idx doc/examples/livegrep/index.json
+
 TODO: 
 + figure out how `doc/examples/livegrep/server.json` is used
 
@@ -212,12 +214,10 @@ optimal performance.
 Regex Support
 -------------
 
-Livegrep uses Google's [re2](https://github.com/google/re2) regular
-expression engine, and inherits its [supported
+Livegrep uses Google's [re2](https://github.com/google/re2) regular expression engine, and inherits its [supported
 syntax](https://github.com/google/re2/wiki/Syntax).
 
-RE2 is mostly PCRE-compatible, but with some [mostly-deliberate
-exceptions](https://swtch.com/~rsc/regexp/regexp3.html#caveats)
+RE2 is mostly PCRE-compatible, but with some [mostly-deliberate exceptions](https://swtch.com/~rsc/regexp/regexp3.html#caveats)
 
 
 LICENSE

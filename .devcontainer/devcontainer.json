@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 // https://aka.ms/devcontainer.json https://github.com/devcontainers/templates/tree/main/src/alpine
+=======
+// https://aka.ms/devcontainer.json
+// https://github.com/devcontainers/templates/tree/main/src/alpine
+>>>>>>> 10020013 (working week starts now :))
 {
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
 	"name": "ellegi",
 	"runArgs": [
-		"--name", "ellegi"
+		"--name",
+		"ellegi"
 	],
 	"forwardPorts": [
 		9172
@@ -16,6 +22,8 @@
 			"extensions": [
 				"golang.go",
 				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.makefile-tools",
+				"ms-vscode.cpptools"
 			]
 		}
 	}

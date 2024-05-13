@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/ellegi/livegrep/vendor/libdivsufsort/examples/mksary.c" "examples/CMakeFiles/mksary.dir/mksary.o" "gcc" "examples/CMakeFiles/mksary.dir/mksary.o.d"
+  "/workspaces/ellegi/src/vendor/libdivsufsort/examples/mksary.c" "examples/CMakeFiles/mksary.dir/mksary.o" "gcc" "examples/CMakeFiles/mksary.dir/mksary.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  ".3"
   "CMakeFiles/divsufsort.dir/divsufsort.o"
   "CMakeFiles/divsufsort.dir/divsufsort.o.d"
   "CMakeFiles/divsufsort.dir/sssort.o"
@@ -8,10 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/divsufsort.dir/trsort.o.d"
   "CMakeFiles/divsufsort.dir/utils.o"
   "CMakeFiles/divsufsort.dir/utils.o.d"
+  "libdivsufsort.a"
   "libdivsufsort.pdb"
-  "libdivsufsort.so"
-  "libdivsufsort.so.3"
-  "libdivsufsort.so.3.0.0"
 )
 
 # Per-language clean rules from dependency scanning.

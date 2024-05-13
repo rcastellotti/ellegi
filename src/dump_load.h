@@ -10,15 +10,16 @@
 
 #include <stdint.h>
 
-const uint32_t kIndexMagic   = 0xc0d35eac;
+const uint32_t kIndexMagic = 0xc0d35eac;
 const uint32_t kIndexVersion = 16;
 
 // 16k is the page size on Apple M1 macs, which is the largest page
 // size of supported platforms. We use a consistent page size
 // everywhere for simplicity
-const uint32_t kPageSize     = (1 << 14);
+const uint32_t kPageSize = (1 << 14);
 
-struct index_header {
+struct index_header
+{
     uint32_t magic;
     uint32_t version;
     uint32_t chunk_size;
@@ -44,14 +45,16 @@ struct index_header {
     uint64_t filepos_off;
 } __attribute__((packed));
 
-struct chunk_header {
+struct chunk_header
+{
     uint64_t data_off;
     uint64_t files_off;
     uint32_t size;
     uint32_t nfiles;
 } __attribute__((packed));
 
-struct content_chunk_header {
+struct content_chunk_header
+{
     uint64_t file_off;
     uint32_t size;
 } __attribute__((packed));

@@ -1,0 +1,10 @@
+digraph G {
+  rankdir="LR"
+  node0 [label="^$"]
+  node1 [label=""]
+  node2 [label=""]
+  node0 -> node1 [label="a"]
+  node1 -> node2 [label="s"]
+  node3 [shape=point,label=""]
+  node2 ->   node3 [label="d"]
+}

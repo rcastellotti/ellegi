@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/ellegi/livegrep/vendor/libdivsufsort/examples/suftest.c" "examples/CMakeFiles/suftest.dir/suftest.o" "gcc" "examples/CMakeFiles/suftest.dir/suftest.o.d"
+  "/workspaces/ellegi/src/vendor/libdivsufsort/examples/suftest.c" "examples/CMakeFiles/suftest.dir/suftest.o" "gcc" "examples/CMakeFiles/suftest.dir/suftest.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

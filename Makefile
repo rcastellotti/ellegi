@@ -1,17 +1,16 @@
 CCDIR= $(CURDIR)/src
 CXX=clang
-# the first one is needed because files are (currently) importing with `src/lib/timer.h`
-CXXFLAGS= -I $(CURDIR) \
-		  -I $(CCDIR)/vendor/re2/ \
-		  -I $(CCDIR)/vendor/utf8cpp/source/ \
-		  -Wno-everything -Wl,--copy-dt-needed-entries
-		  
-LDLIBS = -lprotobuf -lstdc++ -lboost_filesystem -labsl_strings -labsl_hash -labsl_string_view -labsl_synchronization -labsl_raw_hash_set -lgrpc++ -lgflags -lgit2  -ldivsufsort -lgtest
+CXXFLAGS= -Wl,--copy-dt-needed-entries
+LDDFLAGS = -I$(CURDIR) \
+		  -I$(CCDIR)/vendor/re2/ \
+		  -I$(CCDIR)/vendor/libdivsufsort/build/include \
+		  -I$(CCDIR)/vendor/utf8cpp/source/\
+		  -lprotobuf -lgrpc++ \
+		  -lstdc++ -lboost_filesystem -labsl_strings  -labsl_string_view -labsl_synchronization -labsl_raw_hash_set  -lgflags -lgit2  -lgtest
 
 OBJ= src/fs_indexer.o src/dump_load.o src/query_planner.o src/content.o src/codesearch.o src/re_width.o src/chunk.o src/git_indexer.o src/tagsearch.o src/chunk_allocator.o \
       src/lib/radix_sort.o src/lib/metrics.o src/lib/fs_linux.o src/lib/debug.o   \
-      src/tools/grpc_server.o src/tools/analyze-re.o src/tools/inspect-index.o src/tools/dump-file.o \
-      src/proto/config.pb.o src/proto/livegrep.pb.o src/proto/livegrep.grpc.pb.o \
+      src/tools/grpc_server.o src/proto/config.pb.o src/proto/livegrep.pb.o src/proto/livegrep.grpc.pb.o \
 
 PROTODIR= $(CURDIR)/src/proto
 
@@ -21,23 +20,40 @@ help:
 	@echo 'Usage:'
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 
+setup:
+	mkdir -p bin
+	mkdir -p bin/tools
+
 %.o: %.cc 
 	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDDFLAGS) $(LDLIBS) 
 
-codesearch: $(OBJ) src/vendor/re2/obj/libre2.a
-	$(CXX) $(CXXFLAGS) src/tools/codesearch.cc -o bin/$@ $^  $(LDLIBS) 
+codesearch: $(OBJ)  src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a
+	$(CXX) $(CXXFLAGS) src/tools/codesearch.cc -o bin/$@ $^  $(LDDFLAGS) 
+
+tools/inspect-index, tools/analyze-re, tools/dump-file:  $(OBJ) src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a
+	$(CXX) $(CXXFLAGS) src/$@.cc -o bin/$@ $^  $(LDDFLAGS) 
+
+
+codesearchtool: $(OBJ) src/vendor/re2/obj/libre2.a
+	$(CXX) $(CXXFLAGS) src/tools/codesearchtool.cc -o bin/$@ $^  $(LDLIBS) 
 
 ## test: build and run tests for codesearch
-test: $(OBJ) vendor/re2/obj/libre2.a bin/test
-	$(CXX) $(CXXFLAGS) test/codesearch_test.cc test/planner_test.cc test/tagsearch_test.cc test/main.cc -o bin/$@ $^  $(LDLIBS) 
-	$(CCDIR)/bin/test
+test: $(OBJ) src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a 
+	$(CXX) $(CXXFLAGS) test/codesearch_test.cc test/planner_test.cc test/tagsearch_test.cc test/main.cc -o bin/$@ $^  $(LDDFLAGS) 
+	$(CURDIR)/bin/test
 
 web-stuff:
 	cd web/frontend && /opt/pnpm install && ./node_modules/webpack/bin/webpack.js
 
 
-vendor/re2/obj/libre2.a:
-	make -C vendor/re2
+src/vendor/re2/obj/libre2.a:
+	make -C src/vendor/re2
+
+src/vendor/libdivsufsort/build/lib/libdivsufsort.a:
+	mkdir -p $(CCDIR)/vendor/libdivsufsort/build \
+	cd $(CCDIR)/vendor/libdivsufsort/build \
+	cmake -DCMAKE_BUILD_TYPE="Release" -DBUILD_SHARED_LIBS="off" .. \
+	make
 
 dependencies: utf8cpp libdivsufsort
 
@@ -51,7 +67,7 @@ download-libdivsufsort:
 	tar -xf /opt/libdivsufsort.tar.gz -C $(CCDIR)/vendor/libdivsufsort --strip-components 1
 
 install-libdivsufsort:
-	mkdir -p $(CCDIR)/vendor/libdivsufsort/build && cd $(CCDIR)/vendor/libdivsufsort/build && cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/usr/local" .. && make && make install
+	
 
 ## proto: generate go and cpp files in `web/proto` and `src/proto`
 proto:

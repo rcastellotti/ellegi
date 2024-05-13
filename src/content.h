@@ -17,51 +17,63 @@
 using re2::StringPiece;
 using std::vector;
 
-
-class file_contents {
+class file_contents
+{
 public:
-    struct piece {
+    struct piece
+    {
         uint32_t chunk;
         uint32_t off;
         uint32_t len;
     } __attribute__((packed));
 
     template <class T>
-    class proxy {
+    class proxy
+    {
         T obj;
+
     public:
         proxy(T obj) : obj(obj) {}
-        T *operator->() {
+        T *operator->()
+        {
             return &obj;
         }
     };
-    class iterator {
+    class iterator
+    {
     public:
-        const StringPiece operator*() {
-            return StringPiece(reinterpret_cast<char*>(alloc_->at(it_->chunk)->data + it_->off),
+        const StringPiece operator*()
+        {
+            return StringPiece(reinterpret_cast<char *>(alloc_->at(it_->chunk)->data + it_->off),
                                it_->len);
         }
 
-        proxy<StringPiece> operator->() {
+        proxy<StringPiece> operator->()
+        {
             return proxy<StringPiece>(this->operator*());
         }
 
-        iterator &operator++() {
+        iterator &operator++()
+        {
             it_++;
             return *this;
         }
 
-        iterator &operator--() {
+        iterator &operator--()
+        {
             it_--;
             return *this;
         }
 
-        bool operator==(const iterator &rhs) {
+        bool operator==(const iterator &rhs)
+        {
             return it_ == rhs.it_;
         }
-        bool operator!=(const iterator &rhs) {
+        bool operator!=(const iterator &rhs)
+        {
             return !(*this == rhs);
         }
+
     protected:
         iterator(chunk_allocator *alloc, piece *it)
             : alloc_(alloc), it_(it) {}
@@ -72,25 +84,30 @@ public:
         friend class file_contents;
     };
 
-    file_contents(uint32_t npieces) : npieces_(npieces) { }
+    file_contents(uint32_t npieces) : npieces_(npieces) {}
 
-    iterator begin(chunk_allocator *alloc) {
+    iterator begin(chunk_allocator *alloc)
+    {
         return iterator(alloc, pieces_);
     }
 
-    iterator end(chunk_allocator *alloc) {
+    iterator end(chunk_allocator *alloc)
+    {
         return iterator(alloc, pieces_ + npieces_);
     }
 
-    piece *begin() {
+    piece *begin()
+    {
         return pieces_;
     }
 
-    piece *end() {
+    piece *end()
+    {
         return pieces_ + npieces_;
     }
 
-    size_t size() {
+    size_t size()
+    {
         return npieces_;
     }
 
@@ -105,12 +122,14 @@ protected:
     piece pieces_[];
 };
 
-class file_contents_builder {
+class file_contents_builder
+{
 public:
     void extend(chunk *chunk, const StringPiece &piece);
     file_contents *build(chunk_allocator *alloc);
+
 protected:
-    vector <StringPiece> pieces_;
+    vector<StringPiece> pieces_;
 };
 
 #endif

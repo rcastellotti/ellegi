@@ -16,62 +16,68 @@
 
 #include "utf8.h"
 
-using re2::RE2;
 using boost::filesystem::path;
+using re2::RE2;
 
-namespace {
+namespace
+{
+    std::string create_partial_regex(RE2 *re, const char *wildchar)
+    {
+        if (!re)
+            return std::string(wildchar) + "+";
 
-std::string create_partial_regex(RE2 *re, const char *wildchar) {
-    if (!re)
-        return std::string(wildchar) + "+";
+        std::string pattern = re->pattern();
+        // int i = 0, j = pattern.length();
+        bool anchored_start = (pattern.front() == '^');
+        bool anchored_end = (pattern.back() == '$');
 
-    std::string pattern = re->pattern();
-    //int i = 0, j = pattern.length();
-    bool anchored_start = (pattern.front() == '^');
-    bool anchored_end =  (pattern.back() == '$');
+        std::stringstream s;
 
-    std::stringstream s;
+        if (!anchored_start)
+            s << wildchar << "*";
 
-    if (!anchored_start)
-        s << wildchar << "*";
+        s << "("; // in case pattern has interior "|"
+        s << pattern.substr(anchored_start,
+                            pattern.length() - anchored_start - anchored_end);
+        s << ")";
 
-    s << "(";                   // in case pattern has interior "|"
-    s << pattern.substr(anchored_start,
-                        pattern.length() - anchored_start - anchored_end);
-    s << ")";
+        if (!anchored_end)
+            s << wildchar << "*";
 
-    if (!anchored_end)
-        s << wildchar << "*";
+        return s.str();
+    }
 
-    return s.str();
-}
-
-std::string create_tag_line_regex(
-    const std::string& name,
-    const std::string& file,
-    const std::string& lno,
-    const std::string& tags) {
-    // full regex match for a tag line created with
-    //  ctags --format=2 -n --fields=+K
-    return std::string("^") + name + "\t" + file + "\t" + lno + ";\"\t" + tags + "$";
-}
+    std::string create_tag_line_regex(
+        const std::string &name,
+        const std::string &file,
+        const std::string &lno,
+        const std::string &tags)
+    {
+        // full regex match for a tag line created with
+        //  ctags --format=2 -n --fields=+K
+        return std::string("^") + name + "\t" + file + "\t" + lno + ";\"\t" + tags + "$";
+    }
 
 };
 
-void tag_searcher::cache_indexed_files(code_searcher* cs) {
+void tag_searcher::cache_indexed_files(code_searcher *cs)
+{
     file_alloc_ = cs->alloc_.get();
-    for (auto it = cs->begin_files(); it != cs->end_files(); ++it) {
+    for (auto it = cs->begin_files(); it != cs->end_files(); ++it)
+    {
         auto file = it->get();
         auto key = path(file->tree->name) / path(file->path);
         path_to_file_map_.insert(std::make_pair(key.string(), file));
     }
 }
 
-bool tag_searcher::transform(query *q, match_result *m) const {
+bool tag_searcher::transform(query *q, match_result *m) const
+{
     static const std::string regex =
         create_tag_line_regex("([^\t]+)", "([^\t]+)", "(\\d+)", "(.+)");
     StringPiece name, tags_path, tags;
-    if (!RE2::FullMatch(m->line, regex, &name, &tags_path, &m->lno, &tags)) {
+    if (!RE2::FullMatch(m->line, regex, &name, &tags_path, &m->lno, &tags))
+    {
         log(q->trace_id, "unknown ctags format: %s\n", m->line.as_string().c_str());
         return false;
     }
@@ -86,10 +92,11 @@ bool tag_searcher::transform(query *q, match_result *m) const {
 
     // lookup the indexed_file base on repo and path
     path lookup = path(m->file->tree->name) /
-        path(m->file->path).parent_path() /
-        path(tags_path.as_string());
+                  path(m->file->path).parent_path() /
+                  path(tags_path.as_string());
     auto value = path_to_file_map_.find(lookup.string());
-    if (value == path_to_file_map_.end()) {
+    if (value == path_to_file_map_.end())
+    {
         log(q->trace_id,
             "unable to find a file matching %s\n",
             lookup.string().c_str());
@@ -104,26 +111,29 @@ bool tag_searcher::transform(query *q, match_result *m) const {
 
     // jump to context before
     int current = 1;
-    for (;current < std::max(1, m->lno - q->context_lines); ++current)
+    for (; current < std::max(1, m->lno - q->context_lines); ++current)
         ++line_it;
 
     // context before (we reverse the order to match codesearch)
     m->context_before.clear();
-    for (; current < m->lno; ++current) {
+    for (; current < m->lno; ++current)
+    {
         m->context_before.insert(m->context_before.begin(), *line_it);
         ++line_it;
     }
-
 
     // line (match the first occurrence for simplicity)
     m->line = *line_it;
 
     StringPiece match;
     if (q->line_pat->Match(m->line, 0, m->line.size(),
-                           RE2::UNANCHORED, &match, 1)) {
+                           RE2::UNANCHORED, &match, 1))
+    {
         m->matchleft = utf8::distance(m->line.data(), match.data());
         m->matchright = m->matchleft + utf8::distance(match.data(), match.data() + match.size());
-    } else {
+    }
+    else
+    {
         m->matchleft = line_it->find(name);
         m->matchright = m->matchleft + name.size();
     }
@@ -131,7 +141,8 @@ bool tag_searcher::transform(query *q, match_result *m) const {
 
     // context after
     m->context_after.clear();
-    for (int i = 0; i < q->context_lines && line_it != line_end; ++i) {
+    for (int i = 0; i < q->context_lines && line_it != line_end; ++i)
+    {
         m->context_after.push_back(*line_it);
         ++line_it;
     }
@@ -139,7 +150,8 @@ bool tag_searcher::transform(query *q, match_result *m) const {
     return true;
 }
 
-std::string tag_searcher::create_tag_line_regex_from_query(query *q) {
+std::string tag_searcher::create_tag_line_regex_from_query(query *q)
+{
     /* To make tag searches as efficient as possible, we return a
        pattern that is only as long as it needs to be to specify all of
        the query constraints.  In particular, it used to be a minor
@@ -152,13 +164,15 @@ std::string tag_searcher::create_tag_line_regex_from_query(query *q) {
     std::string regex("^");
     regex += create_partial_regex(q->line_pat.get(), "[^\t]");
     regex += "\t";
-    if (!q->file_pats.empty() || q->tags_pat) {
+    if (!q->file_pats.empty() || q->tags_pat)
+    {
         /* This doesn't consider that the original query may actually want to
          * match multiple paths! Sorry... it's too inefficient to implement
          * simply by translating to regex. */
         regex += create_partial_regex(q->file_pats.empty() ? nullptr : q->file_pats.at(0).get(), "[^\t]");
         regex += "\t";
-        if (q->tags_pat) {
+        if (q->tags_pat)
+        {
             regex += "\\d+;\"\t";
             regex += create_partial_regex(q->tags_pat.get(), ".");
             regex += "$";

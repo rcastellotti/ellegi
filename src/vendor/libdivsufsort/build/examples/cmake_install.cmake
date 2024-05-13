@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/ellegi/livegrep/vendor/libdivsufsort/examples
+# Install script for directory: /workspaces/ellegi/src/vendor/libdivsufsort/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

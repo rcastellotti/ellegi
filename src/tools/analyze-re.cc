@@ -9,19 +9,13 @@
 #include <algorithm>
 #include <fstream>
 #include <math.h>
-
 #include <string>
-
 #include "src/lib/debug.h"
-
 #include "src/dump_load.h"
 #include "src/codesearch.h"
 #include "src/query_planner.h"
 #include "src/re_width.h"
-
 #include <gflags/gflags.h>
-
-using namespace std;
 
 DEFINE_string(dot_index, "", "Write a graph of the index key as a dot graph.");
 DEFINE_bool(casefold, false, "Treat the regex as case-insensitive.");
@@ -31,7 +25,7 @@ class QueryPlanDotOutputter
 protected:
     map<QueryPlan *, string> names_;
     set<QueryPlan *> seen_;
-    ofstream out_;
+    std::ofstream out_;
     int ct_;
     intrusive_ptr<QueryPlan> key_;
 
@@ -121,9 +115,11 @@ void write_dot_index(const string &path, intrusive_ptr<QueryPlan> key)
     out.output();
 }
 
-int analyze_re(int argc, char **argv)
+int main(int argc, char **argv)
 {
-    if (argc != 1)
+    gflags::SetUsageMessage("Usage: " + string(argv[0]) + " <options> COMMAND ARGS");
+    gflags::ParseCommandLineFlags(&argc, &argv, true);
+    if (argc == 1)
     {
         fprintf(stderr, "Usage: %s <options> REGEX\n", gflags::GetArgv0());
         return 1;
@@ -134,7 +130,7 @@ int analyze_re(int argc, char **argv)
     if (FLAGS_casefold)
         opts.set_case_sensitive(false);
 
-    RE2 re(argv[0], opts);
+    RE2 re(argv[1], opts);
     if (!re.ok())
     {
         fprintf(stderr, "Error: %s\n", re.error().c_str());

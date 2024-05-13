@@ -1,8 +1,8 @@
 lib/CMakeFiles/divsufsort.dir/divsufsort.o: \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/divsufsort.c \
+ /workspaces/ellegi/src/vendor/libdivsufsort/lib/divsufsort.c \
  /usr/include/stdc-predef.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/../include/divsufsort_private.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/../include/config.h \
+ /workspaces/ellegi/src/vendor/libdivsufsort/lib/../include/divsufsort_private.h \
+ /workspaces/ellegi/src/vendor/libdivsufsort/build/lib/../include/config.h \
  /usr/include/assert.h /usr/include/features.h \
  /usr/include/fortify/stdio.h /usr/include/stdio.h \
  /usr/include/bits/alltypes.h /usr/include/fortify/fortify-headers.h \
@@ -12,4 +12,4 @@ lib/CMakeFiles/divsufsort.dir/divsufsort.o: \
  /usr/include/alloca.h /usr/include/limits.h /usr/include/bits/limits.h \
  /usr/include/memory.h /usr/include/stddef.h /usr/include/inttypes.h \
  /usr/include/stdint.h /usr/include/bits/stdint.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/../include/divsufsort.h
+ /workspaces/ellegi/src/vendor/libdivsufsort/build/lib/../include/divsufsort.h

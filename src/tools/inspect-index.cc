@@ -39,21 +39,24 @@ DEFINE_bool(dump_spans, false, "Dump detailed index span information.");
 DEFINE_bool(dump_trees, false, "Dump tree names.");
 DEFINE_string(dump_source, "", "Dump full indexed source to file.");
 
-int inspect_index(int argc, char **argv)
+int main(int argc, char **argv)
 {
-    if (argc != 1)
+    std::cout << argc << std::endl;
+    if (argc == 1)
     {
         fprintf(stderr, "Usage: %s <options> INDEX.idx\n", gflags::GetArgv0());
         return 1;
     }
+    gflags::SetUsageMessage("Usage: " + string(argv[0]) + " <options> COMMAND ARGS");
+    gflags::ParseCommandLineFlags(&argc, &argv, true);
 
     int fd;
     struct stat st;
     uint8_t *map;
 
     vector<index_span> spans;
-
-    fd = open(argv[0], O_RDONLY);
+    std::cout << "will open" << argv[1] << std::endl;
+    fd = open(argv[1], O_RDONLY);
     if (fd <= 0)
     {
         die("open('%s'): %s\n", argv[0], strerror(errno));

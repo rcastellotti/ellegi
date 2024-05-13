@@ -15,7 +15,8 @@
 
 class chunk_allocator;
 
-class tag_searcher {
+class tag_searcher
+{
 public:
     void cache_indexed_files(code_searcher *cs);
 
@@ -25,7 +26,7 @@ public:
 
 protected:
     chunk_allocator *file_alloc_;
-    std::map<std::string, indexed_file*> path_to_file_map_;
+    std::map<std::string, indexed_file *> path_to_file_map_;
 };
 
 #endif /* TAGSEARCH_H */

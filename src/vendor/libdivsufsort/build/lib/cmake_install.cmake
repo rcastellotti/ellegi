@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib
+# Install script for directory: /workspaces/ellegi/src/vendor/libdivsufsort/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,35 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdivsufsort.so.3.0.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdivsufsort.so.3"
-      )
-    if(EXISTS "${file}" AND
-       NOT IS_SYMLINK "${file}")
-      file(RPATH_CHECK
-           FILE "${file}"
-           RPATH "")
-    endif()
-  endforeach()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/libdivsufsort.so.3.0.0"
-    "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/libdivsufsort.so.3"
-    )
-  foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdivsufsort.so.3.0.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdivsufsort.so.3"
-      )
-    if(EXISTS "${file}" AND
-       NOT IS_SYMLINK "${file}")
-      if(CMAKE_INSTALL_DO_STRIP)
-        execute_process(COMMAND "/usr/bin/strip" "${file}")
-      endif()
-    endif()
-  endforeach()
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/libdivsufsort.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/workspaces/ellegi/src/vendor/libdivsufsort/build/lib/libdivsufsort.a")
 endif()
 

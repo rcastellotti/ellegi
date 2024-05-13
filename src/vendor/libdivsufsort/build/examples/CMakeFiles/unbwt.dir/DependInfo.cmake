@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/ellegi/livegrep/vendor/libdivsufsort/examples/unbwt.c" "examples/CMakeFiles/unbwt.dir/unbwt.o" "gcc" "examples/CMakeFiles/unbwt.dir/unbwt.o.d"
+  "/workspaces/ellegi/src/vendor/libdivsufsort/examples/unbwt.c" "examples/CMakeFiles/unbwt.dir/unbwt.o" "gcc" "examples/CMakeFiles/unbwt.dir/unbwt.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

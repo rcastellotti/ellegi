@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort
+CMAKE_SOURCE_DIR = /workspaces/ellegi/src/vendor/libdivsufsort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
+CMAKE_BINARY_DIR = /workspaces/ellegi/src/vendor/libdivsufsort/build
 
 # Include any dependencies generated for this target.
 include lib/CMakeFiles/divsufsort.dir/depend.make
@@ -70,60 +70,60 @@ include lib/CMakeFiles/divsufsort.dir/progress.make
 include lib/CMakeFiles/divsufsort.dir/flags.make
 
 lib/CMakeFiles/divsufsort.dir/divsufsort.o: lib/CMakeFiles/divsufsort.dir/flags.make
-lib/CMakeFiles/divsufsort.dir/divsufsort.o: /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/divsufsort.c
+lib/CMakeFiles/divsufsort.dir/divsufsort.o: /workspaces/ellegi/src/vendor/libdivsufsort/lib/divsufsort.c
 lib/CMakeFiles/divsufsort.dir/divsufsort.o: lib/CMakeFiles/divsufsort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object lib/CMakeFiles/divsufsort.dir/divsufsort.o"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/divsufsort.o -MF CMakeFiles/divsufsort.dir/divsufsort.o.d -o CMakeFiles/divsufsort.dir/divsufsort.o -c /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/divsufsort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object lib/CMakeFiles/divsufsort.dir/divsufsort.o"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/divsufsort.o -MF CMakeFiles/divsufsort.dir/divsufsort.o.d -o CMakeFiles/divsufsort.dir/divsufsort.o -c /workspaces/ellegi/src/vendor/libdivsufsort/lib/divsufsort.c
 
 lib/CMakeFiles/divsufsort.dir/divsufsort.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/divsufsort.dir/divsufsort.i"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/divsufsort.c > CMakeFiles/divsufsort.dir/divsufsort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/src/vendor/libdivsufsort/lib/divsufsort.c > CMakeFiles/divsufsort.dir/divsufsort.i
 
 lib/CMakeFiles/divsufsort.dir/divsufsort.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/divsufsort.dir/divsufsort.s"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/divsufsort.c -o CMakeFiles/divsufsort.dir/divsufsort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/src/vendor/libdivsufsort/lib/divsufsort.c -o CMakeFiles/divsufsort.dir/divsufsort.s
 
 lib/CMakeFiles/divsufsort.dir/sssort.o: lib/CMakeFiles/divsufsort.dir/flags.make
-lib/CMakeFiles/divsufsort.dir/sssort.o: /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/sssort.c
+lib/CMakeFiles/divsufsort.dir/sssort.o: /workspaces/ellegi/src/vendor/libdivsufsort/lib/sssort.c
 lib/CMakeFiles/divsufsort.dir/sssort.o: lib/CMakeFiles/divsufsort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/CMakeFiles/divsufsort.dir/sssort.o"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/sssort.o -MF CMakeFiles/divsufsort.dir/sssort.o.d -o CMakeFiles/divsufsort.dir/sssort.o -c /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/sssort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/CMakeFiles/divsufsort.dir/sssort.o"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/sssort.o -MF CMakeFiles/divsufsort.dir/sssort.o.d -o CMakeFiles/divsufsort.dir/sssort.o -c /workspaces/ellegi/src/vendor/libdivsufsort/lib/sssort.c
 
 lib/CMakeFiles/divsufsort.dir/sssort.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/divsufsort.dir/sssort.i"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/sssort.c > CMakeFiles/divsufsort.dir/sssort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/src/vendor/libdivsufsort/lib/sssort.c > CMakeFiles/divsufsort.dir/sssort.i
 
 lib/CMakeFiles/divsufsort.dir/sssort.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/divsufsort.dir/sssort.s"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/sssort.c -o CMakeFiles/divsufsort.dir/sssort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/src/vendor/libdivsufsort/lib/sssort.c -o CMakeFiles/divsufsort.dir/sssort.s
 
 lib/CMakeFiles/divsufsort.dir/trsort.o: lib/CMakeFiles/divsufsort.dir/flags.make
-lib/CMakeFiles/divsufsort.dir/trsort.o: /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/trsort.c
+lib/CMakeFiles/divsufsort.dir/trsort.o: /workspaces/ellegi/src/vendor/libdivsufsort/lib/trsort.c
 lib/CMakeFiles/divsufsort.dir/trsort.o: lib/CMakeFiles/divsufsort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object lib/CMakeFiles/divsufsort.dir/trsort.o"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/trsort.o -MF CMakeFiles/divsufsort.dir/trsort.o.d -o CMakeFiles/divsufsort.dir/trsort.o -c /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/trsort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object lib/CMakeFiles/divsufsort.dir/trsort.o"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/trsort.o -MF CMakeFiles/divsufsort.dir/trsort.o.d -o CMakeFiles/divsufsort.dir/trsort.o -c /workspaces/ellegi/src/vendor/libdivsufsort/lib/trsort.c
 
 lib/CMakeFiles/divsufsort.dir/trsort.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/divsufsort.dir/trsort.i"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/trsort.c > CMakeFiles/divsufsort.dir/trsort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/src/vendor/libdivsufsort/lib/trsort.c > CMakeFiles/divsufsort.dir/trsort.i
 
 lib/CMakeFiles/divsufsort.dir/trsort.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/divsufsort.dir/trsort.s"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/trsort.c -o CMakeFiles/divsufsort.dir/trsort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/src/vendor/libdivsufsort/lib/trsort.c -o CMakeFiles/divsufsort.dir/trsort.s
 
 lib/CMakeFiles/divsufsort.dir/utils.o: lib/CMakeFiles/divsufsort.dir/flags.make
-lib/CMakeFiles/divsufsort.dir/utils.o: /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/utils.c
+lib/CMakeFiles/divsufsort.dir/utils.o: /workspaces/ellegi/src/vendor/libdivsufsort/lib/utils.c
 lib/CMakeFiles/divsufsort.dir/utils.o: lib/CMakeFiles/divsufsort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object lib/CMakeFiles/divsufsort.dir/utils.o"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/utils.o -MF CMakeFiles/divsufsort.dir/utils.o.d -o CMakeFiles/divsufsort.dir/utils.o -c /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object lib/CMakeFiles/divsufsort.dir/utils.o"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT lib/CMakeFiles/divsufsort.dir/utils.o -MF CMakeFiles/divsufsort.dir/utils.o.d -o CMakeFiles/divsufsort.dir/utils.o -c /workspaces/ellegi/src/vendor/libdivsufsort/lib/utils.c
 
 lib/CMakeFiles/divsufsort.dir/utils.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/divsufsort.dir/utils.i"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/utils.c > CMakeFiles/divsufsort.dir/utils.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/ellegi/src/vendor/libdivsufsort/lib/utils.c > CMakeFiles/divsufsort.dir/utils.i
 
 lib/CMakeFiles/divsufsort.dir/utils.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/divsufsort.dir/utils.s"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib/utils.c -o CMakeFiles/divsufsort.dir/utils.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/ellegi/src/vendor/libdivsufsort/lib/utils.c -o CMakeFiles/divsufsort.dir/utils.s
 
 # Object files for target divsufsort
 divsufsort_OBJECTS = \
@@ -135,31 +135,25 @@ divsufsort_OBJECTS = \
 # External object files for target divsufsort
 divsufsort_EXTERNAL_OBJECTS =
 
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/divsufsort.o
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/sssort.o
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/trsort.o
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/utils.o
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/build.make
-lib/libdivsufsort.so.3.0.0: lib/CMakeFiles/divsufsort.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C shared library libdivsufsort.so"
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/divsufsort.dir/link.txt --verbose=$(VERBOSE)
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -E cmake_symlink_library libdivsufsort.so.3.0.0 libdivsufsort.so.3 libdivsufsort.so
-
-lib/libdivsufsort.so.3: lib/libdivsufsort.so.3.0.0
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/libdivsufsort.so.3
-
-lib/libdivsufsort.so: lib/libdivsufsort.so.3.0.0
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/libdivsufsort.so
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/divsufsort.o
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/sssort.o
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/trsort.o
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/utils.o
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/build.make
+lib/libdivsufsort.a: lib/CMakeFiles/divsufsort.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libdivsufsort.a"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/divsufsort.dir/cmake_clean_target.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/divsufsort.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-lib/CMakeFiles/divsufsort.dir/build: lib/libdivsufsort.so
+lib/CMakeFiles/divsufsort.dir/build: lib/libdivsufsort.a
 .PHONY : lib/CMakeFiles/divsufsort.dir/build
 
 lib/CMakeFiles/divsufsort.dir/clean:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/divsufsort.dir/cmake_clean.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/divsufsort.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/divsufsort.dir/clean
 
 lib/CMakeFiles/divsufsort.dir/depend:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/ellegi/livegrep/vendor/libdivsufsort /workspaces/ellegi/livegrep/vendor/libdivsufsort/lib /workspaces/ellegi/livegrep/vendor/libdivsufsort/build /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib/CMakeFiles/divsufsort.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/ellegi/src/vendor/libdivsufsort /workspaces/ellegi/src/vendor/libdivsufsort/lib /workspaces/ellegi/src/vendor/libdivsufsort/build /workspaces/ellegi/src/vendor/libdivsufsort/build/lib /workspaces/ellegi/src/vendor/libdivsufsort/build/lib/CMakeFiles/divsufsort.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : lib/CMakeFiles/divsufsort.dir/depend
 

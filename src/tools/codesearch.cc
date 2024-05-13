@@ -65,13 +65,16 @@ namespace fs = boost::filesystem;
 using grpc::Server;
 using grpc::ServerBuilder;
 
-void die_errno(const char *str) {
+void die_errno(const char *str)
+{
     perror(str);
     exit(1);
 }
 
-void build_index(code_searcher *cs, const vector<std::string> &argv) {
-    if (argv.size() != 2) {
+void build_index(code_searcher *cs, const vector<std::string> &argv)
+{
+    if (argv.size() != 2)
+    {
         fprintf(stderr, "Usage: %s [OPTIONS] config.json\n", argv[0].c_str());
         exit(1);
     }
@@ -82,25 +85,31 @@ void build_index(code_searcher *cs, const vector<std::string> &argv) {
 
     IndexSpec spec;
     auto status = google::protobuf::util::JsonStringToMessage(json_text, &spec, google::protobuf::util::JsonParseOptions());
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         fprintf(stderr, "Parsing %s: %s\n", argv[1].c_str(), status.message().data());
         exit(1);
     }
-    if (!spec.paths_size() && !spec.repositories_size()) {
+    if (!spec.paths_size() && !spec.repositories_size())
+    {
         fprintf(stderr, "%s: You must specify at least one path to index.\n", argv[1].c_str());
         exit(1);
     }
 
     if (spec.name().size())
         cs->set_name(spec.name());
-    for (auto &path : spec.paths()) {
+    for (auto &path : spec.paths())
+    {
         fprintf(stderr, "Walking path_spec name=%s, path=%s\n",
                 path.name().c_str(), path.path().c_str());
         fs_indexer indexer(cs, path.path(), path.name(), path.metadata(), path.ignore_symlinks());
-        if (path.ordered_contents().empty()) {
+        if (path.ordered_contents().empty())
+        {
             fprintf(stderr, "  walking full tree\n");
             indexer.walk(path.path());
-        } else {
+        }
+        else
+        {
             fprintf(stderr, "  walking paths from ordered contents list\n");
             fs::path contents_file_path = fs::canonical(path.ordered_contents(), config_file_path.remove_filename());
             indexer.walk_contents_file(contents_file_path);
@@ -108,11 +117,13 @@ void build_index(code_searcher *cs, const vector<std::string> &argv) {
         fprintf(stderr, "done\n");
     }
 
-    for (auto &repo  : spec.repositories()) {
+    for (auto &repo : spec.repositories())
+    {
         fprintf(stderr, "Walking repo_spec name=%s, path=%s (including  submodules: %s)\n",
                 repo.name().c_str(), repo.path().c_str(), repo.walk_submodules() ? "true" : "false");
         git_indexer indexer(cs, repo.path(), repo.name(), repo.metadata(), repo.walk_submodules());
-        for (auto &rev : repo.revisions()) {
+        for (auto &rev : repo.revisions())
+        {
             fprintf(stderr, "  walking %s\n", rev.c_str());
             indexer.walk(rev);
             fprintf(stderr, "  done\n");
@@ -120,9 +131,10 @@ void build_index(code_searcher *cs, const vector<std::string> &argv) {
     }
 }
 
-void initialize_search(code_searcher *search,
-                       int argc, char **argv) {
-    if (FLAGS_load_index.size() == 0) {
+void initialize_search(code_searcher *search, int argc, char **argv)
+{
+    if (FLAGS_load_index.size() == 0)
+    {
         if (FLAGS_dump_index.size())
             search->set_alloc(make_dump_allocator(search, FLAGS_dump_index));
         else
@@ -138,17 +150,19 @@ void initialize_search(code_searcher *search,
         fprintf(stderr, "Finalizing...\n");
         search->finalize();
         elapsed = tm.elapsed();
-        fprintf(stderr, "repository indexed in %d.%06ds\n",
-                (int)elapsed.tv_sec, (int)elapsed.tv_usec);
+        fprintf(stderr, "repository indexed in %d.%06ds\n", (int)elapsed.tv_sec, (int)elapsed.tv_usec);
         metric::dump_all();
-    } else {
+    }
+    else
+    {
         search->load_index(FLAGS_load_index);
     }
     if (FLAGS_dump_index.size() && FLAGS_load_index.size())
         search->dump_index(FLAGS_dump_index);
 }
 
-void listen_grpc(code_searcher *search, code_searcher *tags, const string& addr) {
+void listen_grpc(code_searcher *search, code_searcher *tags, const string &addr)
+{
     promise<void> reload_request;
     auto reload_request_ptr = FLAGS_reload_rpc ? &reload_request : NULL;
 
@@ -157,62 +171,75 @@ void listen_grpc(code_searcher *search, code_searcher *tags, const string& addr)
     ServerBuilder builder;
     builder.AddListeningPort(addr, grpc::InsecureServerCredentials());
     builder.RegisterService(service.get());
-    if (!FLAGS_reuseport) {
+    if (!FLAGS_reuseport)
+    {
         builder.AddChannelArgument(GRPC_ARG_ALLOW_REUSEPORT, 0);
     }
-    if (FLAGS_max_recv_message_size > 0) {
+    if (FLAGS_max_recv_message_size > 0)
+    {
         builder.AddChannelArgument(GRPC_ARG_MAX_RECEIVE_MESSAGE_LENGTH, FLAGS_max_recv_message_size);
     }
-    if (FLAGS_max_send_message_size > 0) {
+    if (FLAGS_max_send_message_size > 0)
+    {
         builder.AddChannelArgument(GRPC_ARG_MAX_SEND_MESSAGE_LENGTH, FLAGS_max_send_message_size);
     }
     std::unique_ptr<Server> server(builder.BuildAndStart());
-    if (!server) {
+    if (!server)
+    {
         die("Error starting GRPC server.");
     }
 
-    if (FLAGS_reload_rpc && FLAGS_hot_index_reload) {
+    if (FLAGS_reload_rpc && FLAGS_hot_index_reload)
+    {
         die("reload_rpc and hot_index_reload options are mutually exclusive");
     }
 
     log("Serving...");
 
-    if (FLAGS_reload_rpc) {
-        thread shutdown_thread([&]() {
+    if (FLAGS_reload_rpc)
+    {
+        thread shutdown_thread([&]()
+                               {
             reload_request.get_future().wait();
-            server->Shutdown();
-        });
+            server->Shutdown(); });
         server->Wait();
         shutdown_thread.join();
-    } else if (FLAGS_hot_index_reload && FLAGS_load_index.size()) {
-        thread shutdown_thread([&]() {
+    }
+    else if (FLAGS_hot_index_reload && FLAGS_load_index.size())
+    {
+        thread shutdown_thread([&]()
+                               {
             fswatcher watcher(FLAGS_load_index);
             if (!watcher.wait_for_event()) {
                 log("Error initializing filesystem watch. Hot index reloads will be disabled.");
                 std::promise<void>().get_future().wait();  // Block forever.
             }
             log("Detected change to index file; reloading...");
-            server->Shutdown();
-        });
+            server->Shutdown(); });
         server->Wait();
         shutdown_thread.join();
-    } else {
+    }
+    else
+    {
         server->Wait();
     }
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     gflags::SetUsageMessage("Usage: " + string(argv[0]) + " <options> REFS");
     gflags::ParseCommandLineFlags(&argc, &argv, true);
 
     signal(SIGPIPE, SIG_IGN);
 
-    while (true) {
+    while (true)
+    {
         code_searcher search;
         unique_ptr<code_searcher> tags;
 
         initialize_search(&search, argc, argv);
-        if (FLAGS_load_tags.size() != 0) {
+        if (FLAGS_load_tags.size() != 0)
+        {
             tags.reset(new code_searcher());
             tags->load_index(FLAGS_load_tags);
         }
@@ -220,7 +247,8 @@ int main(int argc, char **argv) {
         if (FLAGS_index_only)
             return 0;
 
-        if (FLAGS_grpc.size()) {
+        if (FLAGS_grpc.size())
+        {
             listen_grpc(&search, tags.get(), FLAGS_grpc);
         }
     }

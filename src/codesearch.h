@@ -35,25 +35,27 @@ struct match_result;
 using re2::RE2;
 using re2::StringPiece;
 
-using std::string;
+using std::atomic_int;
 using std::locale;
-using std::vector;
 using std::map;
 using std::pair;
-using std::atomic_int;
+using std::string;
+using std::vector;
 
-struct hashstr {
+struct hashstr
+{
     size_t operator()(const StringPiece &str) const;
 };
 
-enum exit_reason {
+enum exit_reason
+{
     kExitNone = 0,
     kExitTimeout,
     kExitMatchLimit,
 };
 
-
-struct match_stats {
+struct match_stats
+{
     timeval re2_time;
     timeval git_time;
     timeval sort_time;
@@ -63,36 +65,40 @@ struct match_stats {
     exit_reason why;
 
     match_stats() : re2_time((struct timeval){0}),
-        git_time((struct timeval){0}),
-        sort_time((struct timeval){0}),
-        index_time((struct timeval){0}),
-        analyze_time((struct timeval){0}),
-        matches(0),
-        why(kExitNone) {}
+                    git_time((struct timeval){0}),
+                    sort_time((struct timeval){0}),
+                    index_time((struct timeval){0}),
+                    analyze_time((struct timeval){0}),
+                    matches(0),
+                    why(kExitNone) {}
 };
 
 struct chunk;
 struct chunk_file;
 
-struct indexed_tree {
+struct indexed_tree
+{
     string name;
     Metadata metadata;
     string version;
 };
 
-struct indexed_file {
+struct indexed_file
+{
     const indexed_tree *tree;
     string path;
     file_contents *content;
     int no;
 };
 
-struct index_info {
+struct index_info
+{
     std::string name;
     vector<indexed_tree> trees;
 };
 
-struct match_result {
+struct match_result
+{
     indexed_file *file;
     int lno;
     vector<StringPiece> context_before;
@@ -101,7 +107,8 @@ struct match_result {
     int matchleft, matchright;
 };
 
-struct file_result {
+struct file_result
+{
     indexed_file *file;
     int matchleft, matchright;
 };
@@ -109,7 +116,8 @@ struct file_result {
 // A query specification passed to match(). line_pat is required to be
 // non-NULL; file_pat, tree_pat and tag_pat may be NULL to specify "no
 // constraint"
-struct query {
+struct query
+{
     std::string trace_id;
     int32_t max_matches;
 
@@ -117,7 +125,8 @@ struct query {
     vector<std::shared_ptr<RE2>> file_pats;
     std::shared_ptr<RE2> tree_pat;
     std::shared_ptr<RE2> tags_pat;
-    struct {
+    struct
+    {
         vector<std::shared_ptr<RE2>> file_pats;
         std::shared_ptr<RE2> tree_pat;
         std::shared_ptr<RE2> tags_pat;
@@ -127,18 +136,19 @@ struct query {
     int context_lines;
 };
 
-class code_searcher {
+class code_searcher
+{
 public:
     code_searcher();
     ~code_searcher();
-    void dump_index(const string& path);
-    void load_index(const string& path);
+    void dump_index(const string &path);
+    void load_index(const string &path);
 
-    const indexed_tree *open_tree(const string &name, const Metadata &meta, const string& version);
-    const indexed_tree *open_tree(const string &name, const string& version);
+    const indexed_tree *open_tree(const string &name, const Metadata &meta, const string &version);
+    const indexed_tree *open_tree(const string &name, const string &version);
 
     void index_file(const indexed_tree *tree,
-                    const string& path,
+                    const string &path,
                     StringPiece contents);
     void finalize();
 
@@ -146,71 +156,81 @@ public:
     chunk_allocator *alloc() { return alloc_.get(); }
 
     vector<indexed_tree> trees() const;
-    string name() const {
+    string name() const
+    {
         return name_;
     };
-    void set_name(const string& name) {
+    void set_name(const string &name)
+    {
         name_ = name;
     }
 
-    vector<std::unique_ptr<indexed_file>>::const_iterator begin_files() {
+    vector<std::unique_ptr<indexed_file>>::const_iterator begin_files()
+    {
         return files_.begin();
     }
-    vector<std::unique_ptr<indexed_file>>::const_iterator end_files() {
+    vector<std::unique_ptr<indexed_file>>::const_iterator end_files()
+    {
         return files_.end();
     }
 
-    int64_t index_timestamp() {
+    int64_t index_timestamp()
+    {
         return index_timestamp_;
     }
-    void set_index_timestamp(int64_t index_timestamp) {
+    void set_index_timestamp(int64_t index_timestamp)
+    {
         index_timestamp_ = index_timestamp;
     }
 
-    class search_thread {
+    class search_thread
+    {
     public:
         search_thread(code_searcher *cs);
         ~search_thread();
 
         // function that will be called to record a match
-        typedef std::function<void (const struct match_result*)> callback_func;
+        typedef std::function<void(const struct match_result *)> callback_func;
         // function that will be called to record a filename match
-        typedef std::function<void (const struct file_result*)> file_callback_func;
+        typedef std::function<void(const struct file_result *)> file_callback_func;
         // function that will be called to transform a match
-        typedef std::function<bool (struct match_result*)> transform_func;
+        typedef std::function<bool(struct match_result *)> transform_func;
 
         /* file_pat may be NULL */
-        void match(const query& q,
-                   const callback_func& cb,
-                   const file_callback_func& fcb,
+        void match(const query &q,
+                   const callback_func &cb,
+                   const file_callback_func &fcb,
                    match_stats *stats)
         {
             match(q, cb, fcb, transform_func(), stats);
         }
-        void match(const query& q,
-                   const callback_func& cb,
-                   const file_callback_func& fcb,
-                   const transform_func& func,
+        void match(const query &q,
+                   const callback_func &cb,
+                   const file_callback_func &fcb,
+                   const transform_func &func,
                    match_stats *stats);
+
     protected:
-        struct job {
+        struct job
+        {
             std::string trace_id;
             atomic_int pending;
             searcher *search;
             filename_searcher *file_search;
-            thread_queue<chunk*> chunks;
+            thread_queue<chunk *> chunks;
         };
 
         const code_searcher *cs_;
         vector<std::thread> threads_;
-        thread_queue<job*> queue_;
-        thread_queue<job*> file_queue_;
+        thread_queue<job *> queue_;
+        thread_queue<job *> file_queue_;
 
         static void search_one(search_thread *);
         static void search_file_one(search_thread *);
+
     private:
-        search_thread(const search_thread&);
-        void operator=(const search_thread&);
+        search_thread(const search_thread &);
+        void operator=(const search_thread &);
     };
 
 protected:
@@ -236,7 +256,7 @@ protected:
     vector<unsigned char> filename_data_;
     vector<uint32_t> filename_suffixes_;
     // pairs (i, file), where file->path starts at filename_data_[i]
-    vector<pair<int, indexed_file*>> filename_positions_;
+    vector<pair<int, indexed_file *>> filename_positions_;
 
     vector<std::unique_ptr<indexed_tree>> trees_;
     vector<std::unique_ptr<indexed_file>> files_;
@@ -253,10 +273,10 @@ private:
 };
 
 // dump_load.cc
-std::unique_ptr<chunk_allocator> make_dump_allocator(code_searcher *search, const string& path);
+std::unique_ptr<chunk_allocator> make_dump_allocator(code_searcher *search, const string &path);
 // chunk_allocator.cc
 std::unique_ptr<chunk_allocator> make_mem_allocator();
 
-void default_re2_options(RE2::Options&);
+void default_re2_options(RE2::Options &);
 
 #endif /* CODESEARCH_H */

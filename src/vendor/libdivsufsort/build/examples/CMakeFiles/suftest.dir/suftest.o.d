@@ -1,7 +1,7 @@
 examples/CMakeFiles/suftest.dir/suftest.o: \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/examples/suftest.c \
+ /workspaces/ellegi/src/vendor/libdivsufsort/examples/suftest.c \
  /usr/include/stdc-predef.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../include/config.h \
+ /workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../include/config.h \
  /usr/include/fortify/stdio.h /usr/include/stdio.h \
  /usr/include/features.h /usr/include/bits/alltypes.h \
  /usr/include/fortify/fortify-headers.h /usr/include/fortify/string.h \
@@ -12,6 +12,6 @@ examples/CMakeFiles/suftest.dir/suftest.o: \
  /usr/include/sys/types.h /usr/include/endian.h \
  /usr/include/fortify/sys/select.h /usr/include/sys/select.h \
  /usr/include/time.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../include/divsufsort.h \
+ /workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../include/divsufsort.h \
  /usr/include/inttypes.h /usr/include/stdint.h /usr/include/bits/stdint.h \
- /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../include/lfs.h
+ /workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../include/lfs.h

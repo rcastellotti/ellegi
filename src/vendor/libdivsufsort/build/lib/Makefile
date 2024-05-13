@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort
+CMAKE_SOURCE_DIR = /workspaces/ellegi/src/vendor/libdivsufsort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
+CMAKE_BINARY_DIR = /workspaces/ellegi/src/vendor/libdivsufsort/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CPackSourceConfig.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /workspaces/ellegi/src/vendor/libdivsufsort/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/lib//CMakeFiles/progress.marks
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles /workspaces/ellegi/src/vendor/libdivsufsort/build/lib//CMakeFiles/progress.marks
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/CMakeFiles/divsufsort.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/divsufsort.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/divsufsort.dir/rule
 .PHONY : lib/CMakeFiles/divsufsort.dir/rule
 
 # Convenience name for target.
@@ -192,67 +192,67 @@ divsufsort: lib/CMakeFiles/divsufsort.dir/rule
 
 # fast build rule for target.
 divsufsort/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/build
 .PHONY : divsufsort/fast
 
 # target to build an object file
 divsufsort.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.o
 .PHONY : divsufsort.o
 
 # target to preprocess a source file
 divsufsort.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.i
 .PHONY : divsufsort.i
 
 # target to generate assembly for a file
 divsufsort.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/divsufsort.s
 .PHONY : divsufsort.s
 
 # target to build an object file
 sssort.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.o
 .PHONY : sssort.o
 
 # target to preprocess a source file
 sssort.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.i
 .PHONY : sssort.i
 
 # target to generate assembly for a file
 sssort.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/sssort.s
 .PHONY : sssort.s
 
 # target to build an object file
 trsort.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.o
 .PHONY : trsort.o
 
 # target to preprocess a source file
 trsort.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.i
 .PHONY : trsort.i
 
 # target to generate assembly for a file
 trsort.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/trsort.s
 .PHONY : trsort.s
 
 # target to build an object file
 utils.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.o
 .PHONY : utils.o
 
 # target to preprocess a source file
 utils.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.i
 .PHONY : utils.i
 
 # target to generate assembly for a file
 utils.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/utils.s
 .PHONY : utils.s
 
 # Help Target
@@ -293,6 +293,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

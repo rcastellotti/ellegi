@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DHAVE_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
 
-C_INCLUDES = -I/workspaces/ellegi/livegrep/vendor/libdivsufsort/examples/../include -I/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples/../include
+C_INCLUDES = -I/workspaces/ellegi/src/vendor/libdivsufsort/examples/../include -I/workspaces/ellegi/src/vendor/libdivsufsort/build/examples/../include
 
 C_FLAGS =  -Wall -O3 -DNDEBUG -fomit-frame-pointer
 

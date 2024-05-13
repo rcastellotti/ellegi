@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort
+CMAKE_SOURCE_DIR = /workspaces/ellegi/src/vendor/libdivsufsort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
+CMAKE_BINARY_DIR = /workspaces/ellegi/src/vendor/libdivsufsort/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CPackSourceConfig.cmake
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /workspaces/ellegi/src/vendor/libdivsufsort/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/examples//CMakeFiles/progress.marks
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles /workspaces/ellegi/src/vendor/libdivsufsort/build/examples//CMakeFiles/progress.marks
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/clean
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/CMakeFiles/suftest.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/suftest.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/suftest.dir/rule
 .PHONY : examples/CMakeFiles/suftest.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ suftest: examples/CMakeFiles/suftest.dir/rule
 
 # fast build rule for target.
 suftest/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/build
 .PHONY : suftest/fast
 
 # Convenience name for target.
 examples/CMakeFiles/mksary.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/mksary.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/mksary.dir/rule
 .PHONY : examples/CMakeFiles/mksary.dir/rule
 
 # Convenience name for target.
@@ -206,12 +206,12 @@ mksary: examples/CMakeFiles/mksary.dir/rule
 
 # fast build rule for target.
 mksary/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/build
 .PHONY : mksary/fast
 
 # Convenience name for target.
 examples/CMakeFiles/sasearch.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/sasearch.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/sasearch.dir/rule
 .PHONY : examples/CMakeFiles/sasearch.dir/rule
 
 # Convenience name for target.
@@ -220,12 +220,12 @@ sasearch: examples/CMakeFiles/sasearch.dir/rule
 
 # fast build rule for target.
 sasearch/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/build
 .PHONY : sasearch/fast
 
 # Convenience name for target.
 examples/CMakeFiles/bwt.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/bwt.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/bwt.dir/rule
 .PHONY : examples/CMakeFiles/bwt.dir/rule
 
 # Convenience name for target.
@@ -234,12 +234,12 @@ bwt: examples/CMakeFiles/bwt.dir/rule
 
 # fast build rule for target.
 bwt/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/build
 .PHONY : bwt/fast
 
 # Convenience name for target.
 examples/CMakeFiles/unbwt.dir/rule:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/unbwt.dir/rule
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/unbwt.dir/rule
 .PHONY : examples/CMakeFiles/unbwt.dir/rule
 
 # Convenience name for target.
@@ -248,82 +248,82 @@ unbwt: examples/CMakeFiles/unbwt.dir/rule
 
 # fast build rule for target.
 unbwt/fast:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/build
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/build
 .PHONY : unbwt/fast
 
 # target to build an object file
 bwt.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.o
 .PHONY : bwt.o
 
 # target to preprocess a source file
 bwt.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.i
 .PHONY : bwt.i
 
 # target to generate assembly for a file
 bwt.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/bwt.s
 .PHONY : bwt.s
 
 # target to build an object file
 mksary.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.o
 .PHONY : mksary.o
 
 # target to preprocess a source file
 mksary.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.i
 .PHONY : mksary.i
 
 # target to generate assembly for a file
 mksary.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/mksary.s
 .PHONY : mksary.s
 
 # target to build an object file
 sasearch.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.o
 .PHONY : sasearch.o
 
 # target to preprocess a source file
 sasearch.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.i
 .PHONY : sasearch.i
 
 # target to generate assembly for a file
 sasearch.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/sasearch.s
 .PHONY : sasearch.s
 
 # target to build an object file
 suftest.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.o
 .PHONY : suftest.o
 
 # target to preprocess a source file
 suftest.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.i
 .PHONY : suftest.i
 
 # target to generate assembly for a file
 suftest.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/suftest.s
 .PHONY : suftest.s
 
 # target to build an object file
 unbwt.o:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.o
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.o
 .PHONY : unbwt.o
 
 # target to preprocess a source file
 unbwt.i:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.i
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.i
 .PHONY : unbwt.i
 
 # target to generate assembly for a file
 unbwt.s:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.s
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/unbwt.s
 .PHONY : unbwt.s
 
 # Help Target
@@ -371,6 +371,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

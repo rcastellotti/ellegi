@@ -1,8 +1,8 @@
-IF(NOT EXISTS "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/install_manifest.txt")
-  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/install_manifest.txt\"")
-ENDIF(NOT EXISTS "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/install_manifest.txt")
+IF(NOT EXISTS "/workspaces/ellegi/src/vendor/libdivsufsort/build/install_manifest.txt")
+  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/workspaces/ellegi/src/vendor/libdivsufsort/build/install_manifest.txt\"")
+ENDIF(NOT EXISTS "/workspaces/ellegi/src/vendor/libdivsufsort/build/install_manifest.txt")
 
-FILE(READ "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/install_manifest.txt" files)
+FILE(READ "/workspaces/ellegi/src/vendor/libdivsufsort/build/install_manifest.txt" files)
 STRING(REGEX REPLACE "\n" ";" files "${files}")
 
 SET(NUM 0)
@@ -33,4 +33,4 @@ FOREACH(file ${files})
   MATH(EXPR NUM "1 + ${NUM}")
 ENDFOREACH(file)
 
-FILE(REMOVE "/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/install_manifest.txt")
+FILE(REMOVE "/workspaces/ellegi/src/vendor/libdivsufsort/build/install_manifest.txt")

@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort
+CMAKE_SOURCE_DIR = /workspaces/ellegi/src/vendor/libdivsufsort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
+CMAKE_BINARY_DIR = /workspaces/ellegi/src/vendor/libdivsufsort/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -159,14 +159,14 @@ pkgconfig/clean:
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -185,14 +185,14 @@ CMakeFiles/uninstall.dir/clean:
 lib/CMakeFiles/divsufsort.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/divsufsort.dir/build.make lib/CMakeFiles/divsufsort.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target divsufsort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target divsufsort"
 .PHONY : lib/CMakeFiles/divsufsort.dir/all
 
 # Build rule for subdir invocation for target.
 lib/CMakeFiles/divsufsort.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/divsufsort.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : lib/CMakeFiles/divsufsort.dir/rule
 
 # Convenience name for target.
@@ -211,14 +211,14 @@ lib/CMakeFiles/divsufsort.dir/clean:
 examples/CMakeFiles/suftest.dir/all: lib/CMakeFiles/divsufsort.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/suftest.dir/build.make examples/CMakeFiles/suftest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=12,13 "Built target suftest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=12,13 "Built target suftest"
 .PHONY : examples/CMakeFiles/suftest.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/suftest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/suftest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : examples/CMakeFiles/suftest.dir/rule
 
 # Convenience name for target.
@@ -237,14 +237,14 @@ examples/CMakeFiles/suftest.dir/clean:
 examples/CMakeFiles/mksary.dir/all: lib/CMakeFiles/divsufsort.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/mksary.dir/build.make examples/CMakeFiles/mksary.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=8,9 "Built target mksary"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=8,9 "Built target mksary"
 .PHONY : examples/CMakeFiles/mksary.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/mksary.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/mksary.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : examples/CMakeFiles/mksary.dir/rule
 
 # Convenience name for target.
@@ -263,14 +263,14 @@ examples/CMakeFiles/mksary.dir/clean:
 examples/CMakeFiles/sasearch.dir/all: lib/CMakeFiles/divsufsort.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/sasearch.dir/build.make examples/CMakeFiles/sasearch.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=10,11 "Built target sasearch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=10,11 "Built target sasearch"
 .PHONY : examples/CMakeFiles/sasearch.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/sasearch.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/sasearch.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : examples/CMakeFiles/sasearch.dir/rule
 
 # Convenience name for target.
@@ -289,14 +289,14 @@ examples/CMakeFiles/sasearch.dir/clean:
 examples/CMakeFiles/bwt.dir/all: lib/CMakeFiles/divsufsort.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/bwt.dir/build.make examples/CMakeFiles/bwt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=1,2 "Built target bwt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=1,2 "Built target bwt"
 .PHONY : examples/CMakeFiles/bwt.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/bwt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/bwt.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : examples/CMakeFiles/bwt.dir/rule
 
 # Convenience name for target.
@@ -315,14 +315,14 @@ examples/CMakeFiles/bwt.dir/clean:
 examples/CMakeFiles/unbwt.dir/all: lib/CMakeFiles/divsufsort.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/unbwt.dir/build.make examples/CMakeFiles/unbwt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles --progress-num=14,15 "Built target unbwt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles --progress-num=14,15 "Built target unbwt"
 .PHONY : examples/CMakeFiles/unbwt.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/unbwt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/unbwt.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles 0
 .PHONY : examples/CMakeFiles/unbwt.dir/rule
 
 # Convenience name for target.

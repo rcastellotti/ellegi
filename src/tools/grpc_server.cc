@@ -33,61 +33,69 @@ using std::string;
 DEFINE_int32(context_lines, 3, "The default number of result context lines to provide for a single query.");
 DEFINE_int32(max_matches, 50, "The default maximum number of matches to return for a single query.");
 
-class CodeSearchImpl final : public CodeSearch::Service {
- public:
+class CodeSearchImpl final : public CodeSearch::Service
+{
+public:
     explicit CodeSearchImpl(code_searcher *cs, code_searcher *tagdata, std::promise<void> *reload_request);
     virtual ~CodeSearchImpl();
 
-    virtual grpc::Status Info(grpc::ServerContext* context, const ::InfoRequest* request, ::ServerInfo* response);
-    void TagsFirstSearch_(::CodeSearchResult* response, query& q, match_stats& stats);
-    virtual grpc::Status Search(grpc::ServerContext* context, const ::Query* request, ::CodeSearchResult* response);
-    virtual grpc::Status Reload(grpc::ServerContext* context, const ::Empty* request, ::Empty* response);
+    virtual grpc::Status Info(grpc::ServerContext *context, const ::InfoRequest *request, ::ServerInfo *response);
+    void TagsFirstSearch_(::CodeSearchResult *response, query &q, match_stats &stats);
+    virtual grpc::Status Search(grpc::ServerContext *context, const ::Query *request, ::CodeSearchResult *response);
+    virtual grpc::Status Reload(grpc::ServerContext *context, const ::Empty *request, ::Empty *response);
 
- private:
+private:
     code_searcher *cs_;
     code_searcher *tagdata_;
     std::promise<void> *reload_request_;
     tag_searcher *tagmatch_;
 
-    thread_queue <code_searcher::search_thread*> pool_;
+    thread_queue<code_searcher::search_thread *> pool_;
 };
 
 std::unique_ptr<CodeSearch::Service> build_grpc_server(code_searcher *cs,
                                                        code_searcher *tagdata,
-                                                       std::promise<void> *reload_request) {
+                                                       std::promise<void> *reload_request)
+{
     return std::unique_ptr<CodeSearch::Service>(new CodeSearchImpl(cs, tagdata, reload_request));
 }
 
 CodeSearchImpl::CodeSearchImpl(code_searcher *cs, code_searcher *tagdata, std::promise<void> *reload_request)
-    : cs_(cs), tagdata_(tagdata), reload_request_(reload_request), tagmatch_(nullptr) {
-    if (tagdata != nullptr) {
+    : cs_(cs), tagdata_(tagdata), reload_request_(reload_request), tagmatch_(nullptr)
+{
+    if (tagdata != nullptr)
+    {
         tagmatch_ = new tag_searcher;
         tagmatch_->cache_indexed_files(cs_);
     }
 }
 
-CodeSearchImpl::~CodeSearchImpl() {
+CodeSearchImpl::~CodeSearchImpl()
+{
     pool_.close();
-    code_searcher::search_thread* thread;
+    code_searcher::search_thread *thread;
     while (pool_.pop(&thread))
         delete thread;
     delete tagmatch_;
 }
 
-string trace_id_from_request(ServerContext *ctx) {
+string trace_id_from_request(ServerContext *ctx)
+{
     auto it = ctx->client_metadata().find("request-id");
     if (it == ctx->client_metadata().end())
         return string("");
     return string(it->second.data(), it->second.size());
 }
 
-Status CodeSearchImpl::Info(ServerContext* context, const ::InfoRequest* request, ::ServerInfo* response) {
+Status CodeSearchImpl::Info(ServerContext *context, const ::InfoRequest *request, ::ServerInfo *response)
+{
     scoped_trace_id trace(trace_id_from_request(context));
     log("Info()");
 
     response->set_name(cs_->name());
     std::vector<indexed_tree> trees = cs_->trees();
-    for (auto it = trees.begin(); it != trees.end(); ++it) {
+    for (auto it = trees.begin(); it != trees.end(); ++it)
+    {
         auto insert = response->add_trees();
         insert->set_name(it->name);
         insert->set_version(it->version);
@@ -101,8 +109,10 @@ Status CodeSearchImpl::Info(ServerContext* context, const ::InfoRequest* request
 Status extract_regex(std::shared_ptr<RE2> *out,
                      const std::string &label,
                      const std::string &input,
-                     bool case_sensitive) {
-    if (input.empty()) {
+                     bool case_sensitive)
+{
+    if (input.empty())
+    {
         out->reset();
         return Status::OK;
     }
@@ -112,7 +122,8 @@ Status extract_regex(std::shared_ptr<RE2> *out,
     opts.set_case_sensitive(case_sensitive);
 
     std::shared_ptr<RE2> re(new RE2(input, opts));
-    if (!re->ok()) {
+    if (!re->ok())
+    {
         return Status(StatusCode::INVALID_ARGUMENT, label + ": " + re->error());
     }
     *out = std::move(re);
@@ -121,8 +132,10 @@ Status extract_regex(std::shared_ptr<RE2> *out,
 
 Status extract_regex(std::shared_ptr<RE2> *out,
                      const std::string &label,
-                     const std::string &input) {
-    if (input.empty()) {
+                     const std::string &input)
+{
+    if (input.empty())
+    {
         out->reset();
         return Status::OK;
     }
@@ -131,10 +144,12 @@ Status extract_regex(std::shared_ptr<RE2> *out,
 }
 
 Status extract_regexes(vector<std::shared_ptr<RE2>> *out,
-                     const std::string &label,
-                     const google::protobuf::RepeatedPtrField<std::string> &inputs,
-                     bool case_sensitive) {
-    if (inputs.empty()) {
+                       const std::string &label,
+                       const google::protobuf::RepeatedPtrField<std::string> &inputs,
+                       bool case_sensitive)
+{
+    if (inputs.empty())
+    {
         out->clear();
         return Status::OK;
     }
@@ -144,9 +159,11 @@ Status extract_regexes(vector<std::shared_ptr<RE2>> *out,
     opts.set_case_sensitive(case_sensitive);
 
     out->reserve(inputs.size());
-    for (const auto &input : inputs) {
+    for (const auto &input : inputs)
+    {
         std::shared_ptr<RE2> re(new RE2(input, opts));
-        if (!re->ok()) {
+        if (!re->ok())
+        {
             return Status(StatusCode::INVALID_ARGUMENT, label + ": " + re->error());
         }
         out->push_back(std::move(re));
@@ -155,19 +172,21 @@ Status extract_regexes(vector<std::shared_ptr<RE2>> *out,
 }
 
 Status extract_regexes(vector<std::shared_ptr<RE2>> *out,
-                     const std::string &label,
-                     const google::protobuf::RepeatedPtrField<std::string> &inputs) {
-    if (inputs.empty()) {
+                       const std::string &label,
+                       const google::protobuf::RepeatedPtrField<std::string> &inputs)
+{
+    if (inputs.empty())
+    {
         out->clear();
         return Status::OK;
     }
-    bool case_sensitive = std::any_of(inputs.begin(), inputs.end(), [](const std::string &s) {
-        return std::any_of(std::begin(s), std::end(s), isupper);
-    });
+    bool case_sensitive = std::any_of(inputs.begin(), inputs.end(), [](const std::string &s)
+                                      { return std::any_of(std::begin(s), std::end(s), isupper); });
     return extract_regexes(out, label, inputs, case_sensitive);
 }
 
-Status parse_query(query *q, const ::Query* request, ::CodeSearchResult* response) {
+Status parse_query(query *q, const ::Query *request, ::CodeSearchResult *response)
+{
     Status status = Status::OK;
     status = extract_regex(&q->line_pat, "line", request->line(), !request->fold_case());
     if (status.ok())
@@ -184,36 +203,45 @@ Status parse_query(query *q, const ::Query* request, ::CodeSearchResult* respons
         status = extract_regex(&q->negate.tags_pat, "-tags", request->not_tags());
     q->filename_only = request->filename_only();
     q->context_lines = request->context_lines();
-    if (q->context_lines <= 0 && FLAGS_context_lines) {
+    if (q->context_lines <= 0 && FLAGS_context_lines)
+    {
         q->context_lines = FLAGS_context_lines;
     }
     return status;
 }
 
-class add_match {
-    void insert_string_back(google::protobuf::RepeatedPtrField<string> *field, StringPiece str) const {
-        if (utf8::is_valid(str.begin(), str.end())) {
+class add_match
+{
+    void insert_string_back(google::protobuf::RepeatedPtrField<string> *field, StringPiece str) const
+    {
+        if (utf8::is_valid(str.begin(), str.end()))
+        {
             field->Add(str.ToString());
-        } else {
+        }
+        else
+        {
             field->Add("<invalid utf-8>");
         }
     }
 
 public:
-    typedef std::set<std::pair<indexed_file*, int>> line_set;
+    typedef std::set<std::pair<indexed_file *, int>> line_set;
 
-    add_match(line_set* ls, CodeSearchResult* response)
+    add_match(line_set *ls, CodeSearchResult *response)
         : unique_lines_(ls), response_(response) {}
 
-    int match_count() {
+    int match_count()
+    {
         return response_->results_size();
     }
 
-    void operator()(const match_result *m) const {
+    void operator()(const match_result *m) const
+    {
         // Avoid a duplicate if a line is returned once from the
         // tags search then again during the main corpus search.
-        bool already_inserted = ! unique_lines_->insert(std::make_pair(m->file, m->lno)).second;
-        if (already_inserted) {
+        bool already_inserted = !unique_lines_->insert(std::make_pair(m->file, m->lno)).second;
+        if (already_inserted)
+        {
             return;
         }
 
@@ -222,10 +250,12 @@ public:
         result->set_version(m->file->tree->version);
         result->set_path(m->file->path);
         result->set_line_number(m->lno);
-        for (auto &piece : m->context_before) {
+        for (auto &piece : m->context_before)
+        {
             insert_string_back(result->mutable_context_before(), piece);
         }
-        for (auto &piece : m->context_after) {
+        for (auto &piece : m->context_after)
+        {
             insert_string_back(result->mutable_context_after(), piece);
         }
         result->mutable_bounds()->set_left(m->matchleft);
@@ -233,7 +263,8 @@ public:
         result->set_line(m->line.ToString());
     }
 
-    void operator()(const file_result *f) const {
+    void operator()(const file_result *f) const
+    {
         auto result = response_->add_file_results();
         result->set_tree(f->file->tree->name);
         result->set_version(f->file->tree->version);
@@ -243,13 +274,14 @@ public:
     }
 
 private:
-    line_set* unique_lines_;
-    CodeSearchResult* response_;
+    line_set *unique_lines_;
+    CodeSearchResult *response_;
 };
 
-static void run_tags_search(const query& main_query, std::string regex,
-                            code_searcher *tagdata, add_match& cb,
-                            tag_searcher* searcher, match_stats& stats) {
+static void run_tags_search(const query &main_query, std::string regex,
+                            code_searcher *tagdata, add_match &cb,
+                            tag_searcher *searcher, match_stats &stats)
+{
     // copy of the main query that we will edit into a query of the tags
     // file for the pattern `regex`
     query q = main_query;
@@ -258,7 +290,7 @@ static void run_tags_search(const query& main_query, std::string regex,
     // the negation constraints will be checked when we transform the match
     // (unfortunately, we can't construct a line query that checks these)
     query constraints;
-    constraints.line_pat = main_query.line_pat;  // tell it what to highlight
+    constraints.line_pat = main_query.line_pat; // tell it what to highlight
     constraints.negate.file_pats.swap(q.negate.file_pats);
     constraints.negate.tags_pat.swap(q.negate.tags_pat);
 
@@ -276,27 +308,31 @@ static void run_tags_search(const query& main_query, std::string regex,
                  &stats);
 }
 
-static std::string pat(const std::shared_ptr<RE2> &p) {
+static std::string pat(const std::shared_ptr<RE2> &p)
+{
     if (p.get() == 0)
         return "";
     return p->pattern();
 }
 
 // returns a comma-separated string of patterns
-static std::string pat(const vector<std::shared_ptr<RE2>> &ps) {
+static std::string pat(const vector<std::shared_ptr<RE2>> &ps)
+{
     if (ps.size() == 0)
         return "";
     if (ps.size() == 1)
         return ps.at(0)->pattern();
     std::vector<std::string> pats(ps.size());
-    std::transform(std::begin(ps), std::end(ps), std::begin(pats), [](std::shared_ptr<RE2> p) { return p->pattern(); });
+    std::transform(std::begin(ps), std::end(ps), std::begin(pats), [](std::shared_ptr<RE2> p)
+                   { return p->pattern(); });
     return absl::StrJoin(pats, ",");
 }
 
-void CodeSearchImpl::TagsFirstSearch_(::CodeSearchResult* response, query& q, match_stats& stats) {
+void CodeSearchImpl::TagsFirstSearch_(::CodeSearchResult *response, query &q, match_stats &stats)
+{
     string line_pat = q.line_pat->pattern();
     string regex;
-    int32_t original_max_matches = q.max_matches;  // remember original value
+    int32_t original_max_matches = q.max_matches; // remember original value
 
     add_match::line_set ls;
     add_match cb(&ls, response);
@@ -326,7 +362,8 @@ void CodeSearchImpl::TagsFirstSearch_(::CodeSearchResult* response, query& q, ma
     pool_.push(search);
 }
 
-Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::CodeSearchResult* response) {
+Status CodeSearchImpl::Search(ServerContext *context, const ::Query *request, ::CodeSearchResult *response)
+{
     WidthWalker width;
 
     scoped_trace_id trace(trace_id_from_request(context));
@@ -343,10 +380,13 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
     q.trace_id = current_trace_id();
 
     q.max_matches = request->max_matches();
-    if (q.max_matches == 0 && FLAGS_max_matches) {
+    if (q.max_matches == 0 && FLAGS_max_matches)
+    {
         // For zero-valued match limits, defer to the command line-specified default
         q.max_matches = FLAGS_max_matches;
-    } else if (q.max_matches < 0) {
+    }
+    else if (q.max_matches < 0)
+    {
         // For explicitly negative match limits, disable the match limiter entirely
         q.max_matches = 0;
     }
@@ -363,22 +403,26 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
         pat(q.negate.tags_pat).c_str(),
         q.max_matches);
 
-    if (q.line_pat->ProgramSize() > kMaxProgramSize) {
+    if (q.line_pat->ProgramSize() > kMaxProgramSize)
+    {
         log("program too large size=%d", q.line_pat->ProgramSize());
         return Status(StatusCode::INVALID_ARGUMENT, "Parse error");
     }
 
     auto file_pat_size =
         std::accumulate(std::begin(q.file_pats), std::end(q.file_pats), 0,
-                        [](int i, std::shared_ptr<RE2> re) { return re->ProgramSize(); });
+                        [](int i, std::shared_ptr<RE2> re)
+                        { return re->ProgramSize(); });
 
-    if (file_pat_size > kMaxProgramSize) {
+    if (file_pat_size > kMaxProgramSize)
+    {
         log("file list program too large size=%d", file_pat_size);
         return Status(StatusCode::INVALID_ARGUMENT, "Parse error");
     }
 
     int w = width.Walk(q.line_pat->Regexp(), 0);
-    if (w > kMaxWidth) {
+    if (w > kMaxWidth)
+    {
         log("program too wide width=%d", w);
         return Status(StatusCode::INVALID_ARGUMENT, "Parse error");
     }
@@ -396,15 +440,16 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
         line_pat.find_first_of(" !\"#%&',-/;<=>@`") == string::npos
         // If the user anchored the RE, then we can only run it against
         // whole lines from the corpus, never against tags.
-        && line_pat.front() != '^'
-        && line_pat.back() != '$'
-        ;
+        && line_pat.front() != '^' && line_pat.back() != '$';
 
     match_stats stats;
     timer search_tm(true);
-    if (q.tags_pat == NULL && tagdata_ && might_match_tags) {
+    if (q.tags_pat == NULL && tagdata_ && might_match_tags)
+    {
         CodeSearchImpl::TagsFirstSearch_(response, q, stats);
-    } else if (q.tags_pat == NULL) {
+    }
+    else if (q.tags_pat == NULL)
+    {
         code_searcher::search_thread *search;
         if (!pool_.try_pop(&search))
             search = new code_searcher::search_thread(cs_);
@@ -412,7 +457,9 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
         add_match cb(&ls, response);
         search->match(q, cb, cb, &stats);
         pool_.push(search);
-    } else {
+    }
+    else
+    {
         if (tagdata_ == NULL)
             return Status(StatusCode::FAILED_PRECONDITION, "No tags file available.");
 
@@ -429,7 +476,8 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
     out_stats->set_index_time(timeval_ms(stats.index_time));
     out_stats->set_analyze_time(timeval_ms(stats.analyze_time));
     out_stats->set_total_time(timeval_ms(search_tm.elapsed()));
-    switch (stats.why) {
+    switch (stats.why)
+    {
     case kExitNone:
         out_stats->set_exit_reason(SearchStats::NONE);
         break;
@@ -444,10 +492,12 @@ Status CodeSearchImpl::Search(ServerContext* context, const ::Query* request, ::
     return Status::OK;
 }
 
-Status CodeSearchImpl::Reload(ServerContext* context, const ::Empty* request, ::Empty* response) {
+Status CodeSearchImpl::Reload(ServerContext *context, const ::Empty *request, ::Empty *response)
+{
     log("Reload()");
-    if (reload_request_ == NULL) {
-      return Status(StatusCode::UNIMPLEMENTED, "reload rpc not enabled");
+    if (reload_request_ == NULL)
+    {
+        return Status(StatusCode::UNIMPLEMENTED, "reload rpc not enabled");
     }
     reload_request_->set_value();
     return Status::OK;

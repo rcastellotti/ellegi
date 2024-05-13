@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort
+CMAKE_SOURCE_DIR = /workspaces/ellegi/src/vendor/libdivsufsort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/ellegi/livegrep/vendor/libdivsufsort/build
+CMAKE_BINARY_DIR = /workspaces/ellegi/src/vendor/libdivsufsort/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/uninstall.dir/compiler_depend.make
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeModules/cmake_uninstall.cmake
+	/usr/bin/cmake -P /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeModules/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /workspaces/ellegi/livegrep/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/ellegi/livegrep/vendor/libdivsufsort /workspaces/ellegi/livegrep/vendor/libdivsufsort /workspaces/ellegi/livegrep/vendor/libdivsufsort/build /workspaces/ellegi/livegrep/vendor/libdivsufsort/build /workspaces/ellegi/livegrep/vendor/libdivsufsort/build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /workspaces/ellegi/src/vendor/libdivsufsort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/ellegi/src/vendor/libdivsufsort /workspaces/ellegi/src/vendor/libdivsufsort /workspaces/ellegi/src/vendor/libdivsufsort/build /workspaces/ellegi/src/vendor/libdivsufsort/build /workspaces/ellegi/src/vendor/libdivsufsort/build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 
