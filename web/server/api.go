@@ -1,6 +1,7 @@
 package server
 
 import (
+	"ellegi/reqid"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -8,9 +9,6 @@ import (
 	"regexp"
 	"strings"
 	"time"
-
-	"ellegi/api"
-	"ellegi/reqid"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -21,6 +19,52 @@ import (
 
 	"golang.org/x/net/context"
 )
+
+type InnerError struct {
+	Code    string `json:"code"`
+	Message string `json:"message"`
+}
+
+// ReplyError is returned along with any non-200 status reply
+type ReplyError struct {
+	Err InnerError `json:"error"`
+}
+
+// ReplySearch is returned to /api/v1/search/:backend
+type ReplySearch struct {
+	Info        *Stats        `json:"info"`
+	Results     []*Result     `json:"results"`
+	FileResults []*FileResult `json:"file_results"`
+	SearchType  string        `json:"search_type"`
+}
+
+type Stats struct {
+	RE2Time     int64  `json:"re2_time"`
+	GitTime     int64  `json:"git_time"`
+	SortTime    int64  `json:"sort_time"`
+	IndexTime   int64  `json:"index_time"`
+	AnalyzeTime int64  `json:"analyze_time"`
+	TotalTime   int64  `json:"total_time"`
+	ExitReason  string `json:"why"`
+}
+
+type Result struct {
+	Tree          string   `json:"tree"`
+	Version       string   `json:"version"`
+	Path          string   `json:"path"`
+	LineNumber    int      `json:"lno"`
+	ContextBefore []string `json:"context_before"`
+	ContextAfter  []string `json:"context_after"`
+	Bounds        [2]int   `json:"bounds"`
+	Line          string   `json:"line"`
+}
+
+type FileResult struct {
+	Tree    string `json:"tree"`
+	Version string `json:"version"`
+	Path    string `json:"path"`
+	Bounds  [2]int `json:"bounds"`
+}
 
 func replyJSON(ctx context.Context, w http.ResponseWriter, status int, obj interface{}) {
 	w.WriteHeader(status)
@@ -35,7 +79,7 @@ func replyJSON(ctx context.Context, w http.ResponseWriter, status int, obj inter
 func writeError(ctx context.Context, w http.ResponseWriter, status int, code, message string) {
 	log.Printf(ctx, "error status=%d code=%s message=%q",
 		status, code, message)
-	replyJSON(ctx, w, status, &api.ReplyError{Err: api.InnerError{Code: code, Message: message}})
+	replyJSON(ctx, w, status, &ReplyError{Err: InnerError{Code: code, Message: message}})
 }
 
 func writeQueryError(ctx context.Context, w http.ResponseWriter, err error) {
@@ -130,7 +174,7 @@ func stringSlice(ss []string) []string {
 	return []string{}
 }
 
-func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*api.ReplySearch, error) {
+func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*ReplySearch, error) {
 	var search *pb.CodeSearchResult
 	var err error
 
@@ -152,9 +196,9 @@ func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*
 		return nil, err
 	}
 
-	reply := &api.ReplySearch{
-		Results:     make([]*api.Result, 0),
-		FileResults: make([]*api.FileResult, 0),
+	reply := &ReplySearch{
+		Results:     make([]*Result, 0),
+		FileResults: make([]*FileResult, 0),
 		SearchType:  "normal",
 	}
 
@@ -163,7 +207,7 @@ func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*
 	}
 
 	for _, r := range search.Results {
-		reply.Results = append(reply.Results, &api.Result{
+		reply.Results = append(reply.Results, &Result{
 			Tree:          r.Tree,
 			Version:       r.Version,
 			Path:          r.Path,
@@ -176,7 +220,7 @@ func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*
 	}
 
 	for _, r := range search.FileResults {
-		reply.FileResults = append(reply.FileResults, &api.FileResult{
+		reply.FileResults = append(reply.FileResults, &FileResult{
 			Tree:    r.Tree,
 			Version: r.Version,
 			Path:    r.Path,
@@ -184,7 +228,7 @@ func (s *server) doSearch(ctx context.Context, backend *Backend, q *pb.Query) (*
 		})
 	}
 
-	reply.Info = &api.Stats{
+	reply.Info = &Stats{
 		RE2Time:     search.Stats.Re2Time,
 		GitTime:     search.Stats.GitTime,
 		SortTime:    search.Stats.SortTime,
@@ -241,31 +285,31 @@ func (s *server) ServeAPISearch(ctx context.Context, w http.ResponseWriter, r *h
 		return
 	}
 
-	if s.honey != nil {
-		e := s.honey.NewEvent()
-		reqid, ok := reqid.FromContext(ctx)
-		if ok {
-			e.AddField("request_id", reqid)
-		}
-		e.AddField("backend", backend.Id)
-		e.AddField("query_line", q.Line)
-		e.AddField("query_file", q.File)
-		e.AddField("query_repo", q.Repo)
-		e.AddField("query_foldcase", q.FoldCase)
-		e.AddField("query_not_file", q.NotFile)
-		e.AddField("query_not_repo", q.NotRepo)
-		e.AddField("max_matches", q.MaxMatches)
+	// if s.honey != nil {
+	// 	e := s.honey.NewEvent()
+	// 	reqid, ok := reqid.FromContext(ctx)
+	// 	if ok {
+	// 		e.AddField("request_id", reqid)
+	// 	}
+	// 	e.AddField("backend", backend.Id)
+	// 	e.AddField("query_line", q.Line)
+	// 	e.AddField("query_file", q.File)
+	// 	e.AddField("query_repo", q.Repo)
+	// 	e.AddField("query_foldcase", q.FoldCase)
+	// 	e.AddField("query_not_file", q.NotFile)
+	// 	e.AddField("query_not_repo", q.NotRepo)
+	// 	e.AddField("max_matches", q.MaxMatches)
 
-		e.AddField("result_count", len(reply.Results))
-		e.AddField("re2_time", reply.Info.RE2Time)
-		e.AddField("git_time", reply.Info.GitTime)
-		e.AddField("sort_time", reply.Info.SortTime)
-		e.AddField("index_time", reply.Info.IndexTime)
-		e.AddField("analyze_time", reply.Info.AnalyzeTime)
+	// 	e.AddField("result_count", len(reply.Results))
+	// 	e.AddField("re2_time", reply.Info.RE2Time)
+	// 	e.AddField("git_time", reply.Info.GitTime)
+	// 	e.AddField("sort_time", reply.Info.SortTime)
+	// 	e.AddField("index_time", reply.Info.IndexTime)
+	// 	e.AddField("analyze_time", reply.Info.AnalyzeTime)
 
-		e.AddField("exit_reason", reply.Info.ExitReason)
-		e.Send()
-	}
+	// 	e.AddField("exit_reason", reply.Info.ExitReason)
+	// 	e.Send()
+	// }
 
 	log.Printf(ctx,
 		"responding success results=%d why=%s stats=%s",

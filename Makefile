@@ -30,12 +30,9 @@ setup:
 codesearch: $(OBJ)  src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a
 	$(CXX) $(CXXFLAGS) src/tools/codesearch.cc -o bin/$@ $^  $(LDDFLAGS) 
 
+## tools: build some tools (inspect-index, analyze-re, dump-file)
 tools/inspect-index, tools/analyze-re, tools/dump-file:  $(OBJ) src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a
 	$(CXX) $(CXXFLAGS) src/$@.cc -o bin/$@ $^  $(LDDFLAGS) 
-
-
-codesearchtool: $(OBJ) src/vendor/re2/obj/libre2.a
-	$(CXX) $(CXXFLAGS) src/tools/codesearchtool.cc -o bin/$@ $^  $(LDLIBS) 
 
 ## test: build and run tests for codesearch
 test: $(OBJ) src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libdivsufsort.a 
@@ -44,30 +41,6 @@ test: $(OBJ) src/vendor/re2/obj/libre2.a src/vendor/libdivsufsort/build/lib/libd
 
 web-stuff:
 	cd web/frontend && /opt/pnpm install && ./node_modules/webpack/bin/webpack.js
-
-
-src/vendor/re2/obj/libre2.a:
-	make -C src/vendor/re2
-
-src/vendor/libdivsufsort/build/lib/libdivsufsort.a:
-	mkdir -p $(CCDIR)/vendor/libdivsufsort/build \
-	cd $(CCDIR)/vendor/libdivsufsort/build \
-	cmake -DCMAKE_BUILD_TYPE="Release" -DBUILD_SHARED_LIBS="off" .. \
-	make
-
-dependencies: utf8cpp libdivsufsort
-
-utf8ccp:
-	curl -L -o /opt/utf8cpp.tar.gz https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
-	tar -xf /opt/utf8cpp.tar.gz -C $(CCDIR)/vendor/utf8cpp --strip-components 1
-
-download-libdivsufsort:
-	curl -L -o /opt/libdivsufsort.tar.gz https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz
-	mkdir -p $(CCDIR)/vendor/libdivsufsort
-	tar -xf /opt/libdivsufsort.tar.gz -C $(CCDIR)/vendor/libdivsufsort --strip-components 1
-
-install-libdivsufsort:
-	
 
 ## proto: generate go and cpp files in `web/proto` and `src/proto`
 proto:
@@ -78,9 +51,28 @@ proto:
 	protoc --go_out=$(CURDIR)/web/proto/   --proto_path=$(PROTODIR)/ --go_opt=Mconfig.proto=/ --go_opt=Mlivegrep.proto=/ config.proto livegrep.proto
 	protoc --go_out=$(PROTODIR) --go-grpc_out=$(CURDIR)/web --proto_path=$(PROTODIR)/ --plugin=protoc-gen-grpc=/root/go/bin/protoc-gen-go-grpc livegrep.proto 
 
-
-
+## clean: guess what, dumb grizzly 🤦🐻
 clean:
 	rm -rf src/*.o src/lib/*.o src/tools/*.o src/proto/*.o
 	make clean -C vendor/re2
 	rm -rf src/vendor/build/
+
+dependencies: utf8cpp libdivsufsort
+
+download-utf8ccp:
+	curl -L -o /opt/utf8cpp.tar.gz https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.5.tar.gz
+	tar -xf /opt/utf8cpp.tar.gz -C $(CCDIR)/vendor/utf8cpp --strip-components 1
+
+download-libdivsufsort:
+	curl -L -o /opt/libdivsufsort.tar.gz https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz
+	mkdir -p $(CCDIR)/vendor/libdivsufsort
+	tar -xf /opt/libdivsufsort.tar.gz -C $(CCDIR)/vendor/libdivsufsort --strip-components 1
+
+src/vendor/re2/obj/libre2.a:
+	make -C src/vendor/re2
+
+src/vendor/libdivsufsort/build/lib/libdivsufsort.a:
+	mkdir -p $(CCDIR)/vendor/libdivsufsort/build \
+	cd $(CCDIR)/vendor/libdivsufsort/build \
+	cmake -DCMAKE_BUILD_TYPE="Release" -DBUILD_SHARED_LIBS="off" .. \
+	make

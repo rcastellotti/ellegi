@@ -1,7 +1,6 @@
 package main
 
 import (
-	"ellegi/middleware"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -12,10 +11,6 @@ import (
 	"path"
 
 	"ellegi/server"
-
-	"ellegi/config"
-
-	"github.com/honeycombio/libhoney-go"
 )
 
 var (
@@ -46,16 +41,12 @@ func main() {
 		}
 	}
 
-	cfg := &config.Config{
+	cfg := &server.Config{
 		DocRoot: *docRoot,
 		Listen:  *serveAddr,
 		Reload:  *reload,
-		Backends: []config.Backend{
+		Backends: []server.BackendConfig{
 			{Id: "", Addr: *backendAddr},
-		},
-		Honeycomb: config.Honeycomb{
-			WriteKey: os.Getenv("HONEYCOMB_WRITE_KEY"),
-			Dataset:  os.Getenv("HONEYCOMB_DATASET"),
 		},
 	}
 
@@ -81,18 +72,12 @@ func main() {
 		}
 	}
 
-	libhoney.Init(libhoney.Config{})
-
 	handler, err := server.New(cfg)
 	if err != nil {
 		fmt.Print("will panic here")
 		panic(err.Error())
 		fmt.Print("will panic here")
 
-	}
-
-	if cfg.ReverseProxy {
-		handler = middleware.UnwrapProxyHeaders(handler)
 	}
 
 	http.DefaultServeMux.Handle("/", handler)

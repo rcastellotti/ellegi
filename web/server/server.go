@@ -2,6 +2,7 @@ package server
 
 import (
 	"bytes"
+	"ellegi/reqid"
 	"fmt"
 	"html/template"
 	"io"
@@ -16,10 +17,7 @@ import (
 	"google.golang.org/grpc"
 
 	"github.com/bmizerany/pat"
-	libhoney "github.com/honeycombio/libhoney-go"
 
-	"ellegi/config"
-	"ellegi/reqid"
 	"ellegi/server/log"
 	"ellegi/templates"
 )
@@ -32,23 +30,20 @@ type page struct {
 	ScriptData    interface{}
 	IncludeHeader bool
 	Data          interface{}
-	Config        *config.Config
+	Config        *Config
 	AssetHashes   map[string]string
-	Nonce         template.HTMLAttr // either `` or ` nonce="..."`
 }
 
 type server struct {
-	config      *config.Config
+	config      *Config
 	bk          map[string]*Backend
 	bkOrder     []string
-	repos       map[string]config.RepoConfig
+	repos       map[string]RepoConfig
 	inner       http.Handler
 	Templates   map[string]*template.Template
 	OpenSearch  *texttemplate.Template
 	AssetHashes map[string]string
 	Layout      *template.Template
-
-	honey *libhoney.Builder
 
 	serveFilePathRegex *regexp.Regexp
 }
@@ -82,9 +77,9 @@ func (s *server) ServeRoot(ctx context.Context, w http.ResponseWriter, r *http.R
 
 type searchScriptData struct {
 	RepoUrls           map[string]map[string]string `json:"repo_urls"`
-	InternalViewRepos  map[string]config.RepoConfig `json:"internal_view_repos"`
+	InternalViewRepos  map[string]RepoConfig        `json:"internal_view_repos"`
 	DefaultSearchRepos []string                     `json:"default_search_repos"`
-	LinkConfigs        []config.LinkConfig          `json:"link_configs"`
+	LinkConfigs        []LinkConfig                 `json:"link_configs"`
 }
 
 func (s *server) makeSearchScriptData() (script_data *searchScriptData, backends []*Backend, sampleRepo string) {
@@ -170,9 +165,9 @@ func (s *server) ServeFile(ctx context.Context, w http.ResponseWriter, r *http.R
 	}
 
 	script_data := &struct {
-		RepoInfo config.RepoConfig `json:"repo_info"`
-		FilePath string            `json:"file_path"`
-		Commit   string            `json:"commit"`
+		RepoInfo RepoConfig `json:"repo_info"`
+		FilePath string     `json:"file_path"`
+		Commit   string     `json:"commit"`
 	}{repo, path, commit}
 
 	s.renderPage(ctx, w, r, "fileview.html", &page{
@@ -234,11 +229,6 @@ func (s *server) ServeStats(ctx context.Context, w http.ResponseWriter, r *http.
 }
 
 func (s *server) requestProtocol(r *http.Request) string {
-	if s.config.ReverseProxy {
-		if proto := r.Header.Get("X-Real-Proto"); len(proto) > 0 {
-			return proto
-		}
-	}
 	if r.TLS != nil {
 		return "https"
 	}
@@ -278,11 +268,7 @@ func (s *server) renderPage(ctx context.Context, w io.Writer, r *http.Request, t
 	pageData.Config = s.config
 	// pageData.AssetHashes = s.AssetHashes
 
-	nonce := "" // custom nonce computation can go here
 
-	if nonce != "" {
-		pageData.Nonce = template.HTMLAttr(fmt.Sprintf(` nonce="%s"`, nonce))
-	}
 
 	err := t.ExecuteTemplate(w, templateName, pageData)
 	if err != nil {
@@ -319,21 +305,13 @@ func (s *server) Handler(f func(c context.Context, w http.ResponseWriter, r *htt
 	return handler(f)
 }
 
-func New(cfg *config.Config) (http.Handler, error) {
+func New(cfg *Config) (http.Handler, error) {
 	srv := &server{
 		config: cfg,
 		bk:     make(map[string]*Backend),
-		repos:  make(map[string]config.RepoConfig),
+		repos:  make(map[string]RepoConfig),
 	}
 	srv.loadTemplates()
-
-	if cfg.Honeycomb.WriteKey != "" {
-		log.Printf(context.Background(),
-			"Enabling honeycomb dataset=%s", cfg.Honeycomb.Dataset)
-		srv.honey = libhoney.NewBuilder()
-		srv.honey.WriteKey = cfg.Honeycomb.WriteKey
-		srv.honey.Dataset = cfg.Honeycomb.Dataset
-	}
 
 	dialOpts := []grpc.DialOption{}
 	callOpts := []grpc.CallOption{}

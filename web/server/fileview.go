@@ -11,7 +11,6 @@ import (
 	"sort"
 	"strings"
 
-	"ellegi/config"
 )
 
 // Mapping from known file extensions to filetype hinting.
@@ -101,7 +100,7 @@ type directoryListEntry struct {
 
 type fileViewerContext struct {
 	PathSegments   []breadCrumbEntry
-	Repo           config.RepoConfig
+	Repo           RepoConfig
 	Commit         string
 	DirContent     *directoryContent
 	FileContent    *sourceFileContent
@@ -229,7 +228,7 @@ func buildReadmeRegex(supportedReadmeExtensions []string) *regexp.Regexp {
 	return repoFileRegex
 }
 
-func buildDirectoryListEntry(treeEntry gitTreeEntry, pathFromRoot string, repo config.RepoConfig) directoryListEntry {
+func buildDirectoryListEntry(treeEntry gitTreeEntry, pathFromRoot string, repo RepoConfig) directoryListEntry {
 	var fileUrl string
 	var symlinkTarget string
 	if treeEntry.Mode == "120000" {
@@ -257,7 +256,7 @@ func languageFromFirstLine(line string) string {
 	return ""
 }
 
-func buildFileData(relativePath string, repo config.RepoConfig, commit string) (*fileViewerContext, error) {
+func buildFileData(relativePath string, repo RepoConfig, commit string) (*fileViewerContext, error) {
 	commitHash := commit
 	out, err := gitCommitHash(commit, repo.Path)
 	if err == nil {

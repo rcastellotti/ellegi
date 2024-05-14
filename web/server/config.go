@@ -1,17 +1,12 @@
-package config
+package server
 
 import (
 	"html/template"
 )
 
-type Backend struct {
+type BackendConfig struct {
 	Id   string `json:"id"`
 	Addr string `json:"addr"`
-}
-
-type Honeycomb struct {
-	WriteKey string `json:"write_key"`
-	Dataset  string `json:"dataset"`
 }
 
 type Config struct {
@@ -25,13 +20,9 @@ type Config struct {
 		MailTo string `json:"mailto"`
 	} `json:"feedback"`
 
-	GoogleAnalyticsId string `json:"google_analytics_id"`
-	// Should we respect X-Real-Ip, X-Real-Proto, and X-Forwarded-Host?
-	ReverseProxy bool `json:"reverse_proxy"`
-
 	// List of backends to connect to. Each backend must include
 	// the "id" and "addr" fields.
-	Backends []Backend `json:"backends"`
+	Backends []BackendConfig `json:"backends"`
 
 	// The address to listen on, as HOST:PORT.
 	Listen string `json:"listen"`
@@ -40,19 +31,12 @@ type Config struct {
 	// for site-specific customizations
 	HeaderHTML template.HTML `json:"header_html"`
 
-	// HTML injected into layout template
-	// just before </body> for site-specific customization
-	FooterHTML template.HTML `json:"footer_html"`
-
 	Sentry struct {
 		URI string `json:"uri"`
 	} `json:"sentry"`
 
 	// Whether to re-load templates on every request
 	Reload bool `json:"reload"`
-
-	// honeycomb API write key
-	Honeycomb Honeycomb `json:"honeycomb"`
 
 	DefaultMaxMatches int32 `json:"default_max_matches"`
 

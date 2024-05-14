@@ -6,7 +6,10 @@ generate an index file: ./bin/codesearch -index_only -dump_index livegrep.idx do
 
 TODO: 
 + figure out how `doc/examples/livegrep/server.json` is used
-
++ remove google analytics 
++ reverseproxy
++ define a config format 
+    + allow to specify repositories to clone and keep updated
 
 
 
@@ -18,28 +21,6 @@ Livegrep is a tool, partially inspired by Google Code Search, for
 interactive regex search of ~gigabyte-scale source repositories. You
 can see a running instance at
 [http://livegrep.com/](http://livegrep.com).
-
-Building
---------
-    
-livegrep builds using [bazel][bazel]. You will need to 
-[install][bazel-install] with a version matching that in `.bazelversion`.
-Running bazel via [bazelisk][bazelisk] will download the right version
-automatically.
-
-livegrep vendors and/or fetches all of its dependencies using `bazel`,
-and so should only require a relatively recent C++ compiler to build.
-
-Once you have those dependencies, you can build using
-
-    bazel build //...
-
-Note that the initial build will download around 100M of
-dependencies. These will be cached once downloaded.
-
-[bazel]: http://www.bazel.io/
-[bazel-install]: http://www.bazel.io/docs/install.html
-[bazelisk]: https://bazel.build/install/bazelisk
 
 Invoking
 --------
@@ -173,14 +154,8 @@ In a browser, now visit `http://localhost:8910` and you should see a working
 livegrep. Search for something, and once you get a result, click on the file
 name or a line number. You should now be taken to the file browser!
 
-Docker images
--------------
 
-Livegrep's CI builds Docker images [into the livegrep
-organization][docker] docker repository on every merge to `main`. They
-should be generally usable. For instance, to build+run a livegrep
-index of this repository, you could run:
-
+i will keep this as a template:
 ```
 docker run -v $(pwd):/data ghcr.io/livegrep/livegrep/indexer /livegrep/bin/livegrep-github-reindex -repo livegrep/livegrep -http -dir /data
 docker network create livegrep

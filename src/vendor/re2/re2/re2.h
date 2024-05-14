@@ -384,7 +384,7 @@ class RE2 {
   //    int number;
   //    RE2::FullMatch("abc", "[a-z]+(\\d+)?", &number);
   template <typename... A>
-  static bool FullMatch(const StringPiece& text, const RE2& re, A&&... a) {
+  static bool    wFullMatch(const StringPiece& text, const RE2& re, A&&... a) {
     return Apply(FullMatchN, text, re, Arg(std::forward<A>(a))...);
   }
 

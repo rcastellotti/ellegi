@@ -2,10 +2,10 @@ package log
 
 import (
 	"bytes"
+	"ellegi/reqid"
 	"fmt"
 	"time"
 
-	"ellegi/reqid"
 	"golang.org/x/net/context"
 )
 
